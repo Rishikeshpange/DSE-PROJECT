@@ -2635,13 +2635,13 @@ UIAlertView *alert;
             btn_CreateAccount.backgroundColor = [UIColor colorWithRed:(101/255.0)green:(104/255.0) blue:(27/255.0) alpha:1];
             
             
-//            btn_CreateOpty.enabled = YES;
-//            btn_CreateOpty.backgroundColor = [UIColor colorWithRed:(115/255.0)green:(182/255.0) blue:(68/255.0) alpha:1];
+            btn_CreateOpty.enabled = YES;
+            btn_CreateOpty.backgroundColor = [UIColor colorWithRed:(115/255.0)green:(182/255.0) blue:(68/255.0) alpha:1];
             
             
-            btn_CreateOpty.enabled = NO; //Abhishek
-            btn_CreateOpty.backgroundColor = [UIColor colorWithRed:(101/255.0)green:(104/255.0) blue:(27/255.0) alpha:1]; //Abhishek
-            
+//            btn_CreateOpty.enabled = NO; //Abhishek
+//            btn_CreateOpty.backgroundColor = [UIColor colorWithRed:(101/255.0)green:(104/255.0) blue:(27/255.0) alpha:1]; //Abhishek
+//            
 
             
         }
@@ -2901,6 +2901,14 @@ UIAlertView *alert;
     [request addValue:msglength forHTTPHeaderField:@"Content-Length"];
     
     [[RequestDelegate alloc]initiateRequest:request name:@"createOpportunity_AgainstContact"];
+    
+    
+    
+    //Abhishek
+    btn_CreateContact.enabled = NO; //Abhishek
+    btn_CreateContact.backgroundColor = [UIColor colorWithRed:(101/255.0)green:(104/255.0) blue:(27/255.0) alpha:1];//Abhishek
+    
+    
     
 }
 -(void)getCreateOpportunity_Found:(NSNotification*)notification
