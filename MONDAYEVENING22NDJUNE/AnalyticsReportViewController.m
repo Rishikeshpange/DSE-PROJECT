@@ -6,6 +6,9 @@
 //  Copyright (c) 2015 LetsIDev. All rights reserved.
 //
 
+
+//Abhishek
+
 #import "AnalyticsReportViewController.h"
 #import "AnalyticsViewController.h"
 #import "LoginViewController.h"
@@ -15,6 +18,8 @@
     NSString *dateString;
     int fixedYear,numValue;
     long getmonthNumber;
+    
+
 }
 @end
 @implementation AnalyticsReportViewController
