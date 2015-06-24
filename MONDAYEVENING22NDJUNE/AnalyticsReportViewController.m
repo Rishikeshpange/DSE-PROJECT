@@ -64,10 +64,43 @@
         //NSLog(@"no=%@",[analyticsYear objectAtIndex:i])
     }
 
-   
+   //Abhishek
+    self.txtSelectDSE.delegate = self; //Abhishek
+    self.txtFromDate.delegate = self; //Abhishek
+    self.txtTODate.delegate = self; //Abhishek
+    
+    
 
     // Do any additional setup after loading the view.
 }
+
+
+
+
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField // Abhishek
+{
+    NSLog(@"\n Testing.....");
+    
+    if (textField == self.txtSelectDSE) {
+        [textField resignFirstResponder];
+        return NO;
+    }
+    else if (textField == self.txtFromDate){
+        [textField resignFirstResponder];
+        return NO;
+    }
+    else if (textField == self.txtTODate){
+        [textField resignFirstResponder];
+        return NO;
+    }
+    else
+    {
+        return YES;
+    }
+    return YES;
+}
+
 
 -(void)info_btn
 {

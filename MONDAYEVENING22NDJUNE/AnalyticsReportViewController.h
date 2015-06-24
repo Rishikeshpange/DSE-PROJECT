@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AnalyticsReportViewController : UIViewController<UIActionSheetDelegate>
+@interface AnalyticsReportViewController : UIViewController<UIActionSheetDelegate,UITextFieldDelegate>
 {
     UIDatePicker *datePicker; //ui date picker for picking date
     UIActionSheet *actionSheet; // ACtionsheet
@@ -28,9 +28,7 @@
 
 
 @property (weak, nonatomic) IBOutlet UIView *_firstView;
-
 @property (weak, nonatomic) IBOutlet UIView *_SecondView;
-
 
 
 @property (weak, nonatomic) IBOutlet UITextField *txtSelectDSE;
