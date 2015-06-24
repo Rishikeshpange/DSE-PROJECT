@@ -666,6 +666,7 @@ UIAlertView *alert;
 
 
 
+
 -(void)PPLdropdown
 {
     [self.PPL resignFirstResponder];
@@ -1076,11 +1077,8 @@ UIAlertView *alert;
     [request addValue:msglength forHTTPHeaderField:@"Content-Length"];
     [[RequestDelegate alloc]initiateRequest:request name:@"GetPostalCode"];
     
-    
-    
-    
-    
 }
+
 //- (IBAction)textTaluka:(UITextField *)sender {
 -(void)Talukadropdown{
     [self.textTaluka resignFirstResponder];
@@ -1113,7 +1111,6 @@ UIAlertView *alert;
     [request addValue:msglength forHTTPHeaderField:@"Content-Length"];
     [[RequestDelegate alloc]initiateRequest:request name:@"GetTaluka"];
 }
-
 
 - (IBAction)getAccountNumber:(id)sender {
     
@@ -2413,19 +2410,14 @@ UIAlertView *alert;
     alertView.delegate = self;
     alertView.tag = 110;
     [alertView show];
-    
-    
 }
 
 
 - (IBAction)btncreateaccount:(id)sender
 {
-    
     NSLog(@"\n Create Account Action....");
-    
     [self showAlert];//Abhishek
-    [self callCreateAccountConnection];
-    
+    [self callCreateAccountConnection]; //Abhishek
 }
 
 
@@ -2643,9 +2635,14 @@ UIAlertView *alert;
             btn_CreateAccount.backgroundColor = [UIColor colorWithRed:(101/255.0)green:(104/255.0) blue:(27/255.0) alpha:1];
             
             
-            btn_CreateOpty.enabled = YES;
-            btn_CreateOpty.backgroundColor = [UIColor colorWithRed:(115/255.0)green:(182/255.0) blue:(68/255.0) alpha:1];
+//            btn_CreateOpty.enabled = YES;
+//            btn_CreateOpty.backgroundColor = [UIColor colorWithRed:(115/255.0)green:(182/255.0) blue:(68/255.0) alpha:1];
             
+            
+            btn_CreateOpty.enabled = NO; //Abhishek
+            btn_CreateOpty.backgroundColor = [UIColor colorWithRed:(101/255.0)green:(104/255.0) blue:(27/255.0) alpha:1]; //Abhishek
+            
+
             
         }
         else if (buttonIndex == 1) {// 2nd Other Button // Cancel Button
