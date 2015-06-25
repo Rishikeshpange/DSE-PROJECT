@@ -2143,7 +2143,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "455"
             endingLineNumber = "455"
-            landmarkName = "-btnToDate:"
+            landmarkName = "-dismissDatePicker:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2431,7 +2431,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "425"
             endingLineNumber = "425"
-            landmarkName = "-btnSelectDSE:"
+            landmarkName = "-btnFromDate:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3439,8 +3439,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "593"
             endingLineNumber = "593"
-            landmarkName = "-prepareForSegue:sender:"
-            landmarkType = "5">
+            landmarkName = "@implementation AnalyticsReportViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3503,7 +3503,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "132"
             endingLineNumber = "132"
-            landmarkName = "-btnSelectMonth:"
+            landmarkName = "-alertView:didDismissWithButtonIndex:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3519,7 +3519,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "197"
             endingLineNumber = "197"
-            landmarkName = "-actionSheet:clickedButtonAtIndex:"
+            landmarkName = "-btnSelectYear:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3535,7 +3535,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "150"
             endingLineNumber = "150"
-            landmarkName = "-btnSelectMonth:"
+            landmarkName = "-currentDate"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3679,8 +3679,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "578"
             endingLineNumber = "578"
-            landmarkName = "-SearchBtn:"
-            landmarkType = "5">
+            landmarkName = "@implementation AnalyticsReportViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
