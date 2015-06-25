@@ -347,15 +347,27 @@
 }
 - (IBAction)MarkAsLostViewPush:(id)sender
 {
-    if([self.SALES_STAGE_NAME.text isEqualToString:@"Closed Lost at C1"])
-    {
-        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Attention!" message:@"Your Oppurtunity is Already Marked as Lost" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [alert show];
-    }
-    else{
+    if([self.SALES_STAGE_NAME.text isEqualToString:@"C0 (Prospecting)"] || [self.SALES_STAGE_NAME.text isEqualToString:@"C1 (Quote Tendered)"] || [self.SALES_STAGE_NAME.text isEqualToString:@"C1A (Papers submitted)"])
+            {
+                [self performSegueWithIdentifier:@"ShowMarkAsLostOpty" sender:nil];
+                
+            }
+     else
+     {
+         UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Attention!" message:@"Oppurtunity Cannot be marked as lost for the given Sales Stage" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                 [alert show];
+         
+     }
 
-    [self performSegueWithIdentifier:@"ShowMarkAsLostOpty" sender:nil];
-    }
+//    if([self.SALES_STAGE_NAME.text isEqualToString:@"Closed Lost at C1"])
+//    {
+//        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Attention!" message:@"Your Oppurtunity is Already Marked as Lost" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+//        [alert show];
+//    }
+//    else{
+//
+//    [self performSegueWithIdentifier:@"ShowMarkAsLostOpty" sender:nil];
+//    }
 }
 - (IBAction)NewActivityBtnClicked:(id)sender {
     

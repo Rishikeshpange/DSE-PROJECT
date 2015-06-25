@@ -632,10 +632,12 @@ cell.lbl_Activity_Status.text=[NSString stringWithFormat:@"%@",[[pendingActiviti
         if ([cell.lbl_Activity_Status.text isEqualToString:@"Done"])
         {
             cell.doneButton.enabled=NO;
+            cell.updateButton.enabled=NO;
         }
         else if ([cell.lbl_Activity_Status.text isEqualToString:@"Open"])
         {
         cell.doneButton.enabled=YES;
+             cell.updateButton.enabled=YES;
         }
         
         if ([cell.lbl_Description.text isEqualToString:@""])
