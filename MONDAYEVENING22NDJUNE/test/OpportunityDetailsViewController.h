@@ -13,7 +13,6 @@
 
 @interface OpportunityDetailsViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource,UIActionSheetDelegate,UIAlertViewDelegate,CustomIOSAlertViewDelegate>
 {
-    
     UserDetails_Var *userDetailsVal_;
     AppDelegate *appdelegate;
     

@@ -2955,8 +2955,6 @@ UIAlertView *alert;
         [self hideAlert];
         [self emptyTextfield];
         
-        
-        
         //        self.PPL.text=nil;
         //        self.PL.text=nil;
         //        self.APPLICATION.text=nil;
@@ -2975,17 +2973,14 @@ UIAlertView *alert;
         //        _textlast=nil;
         //        _textid=nil;
         //        _textnumber=nil;
-        
     }
     else
     {
-        
-        
+        NSLog(@"");
     }
     
     NSString *CONTACT_ID = [TBXML textForElement:IDC];
     createopportunity.Contact_ = CONTACT_ID;
-    
     NSLog(@"\n\n OPTY_ID_ ...!!! %@ ",createopportunity.Id_);
     NSLog(@"\n\n OPTY_ID_ ...!!! %@ ",createopportunity.Contact_);
     }

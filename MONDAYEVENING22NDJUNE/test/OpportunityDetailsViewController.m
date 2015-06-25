@@ -435,8 +435,8 @@
 -(void)PendingActivityListFound:(NSNotification*)notification  // Activity Response
 {
     int i = 0; //for test loop
-    pendingActivities_ListArr=[[NSMutableArray alloc] init];
-    pendingActivities_Customer_list=[[NSMutableArray alloc] init];
+    pendingActivities_ListArr = [[NSMutableArray alloc] init];
+    pendingActivities_Customer_list = [[NSMutableArray alloc] init];
     //NSArray  *array_=[[NSArray alloc] init];
     NSError *err;
     NSString *response=[[notification userInfo]objectForKey:@"response"];
@@ -458,6 +458,7 @@
                 activityPending_list = [[ActivityPendingList alloc]init];
 
                 TBXMLElement *table  = [TBXML childElementNamed:@"S_OPTY" parentElement:[TBXML childElementNamed:@"old" parentElement:tuple]];
+                
 //                TBXMLElement *X_ACTIVITY_TYPE = [TBXML childElementNamed:@"ACTIVITY_TYPE" parentElement:table];
 //                //NSString *str_NAME = [TBXML textForElement:X_ACTIVITY_TYPE];
 //                activityPending_list.ACTIVITY_TYPE =[TBXML textForElement:X_ACTIVITY_TYPE];
@@ -487,7 +488,6 @@
                 TBXMLElement *X_CONTACT_ID = [TBXML childElementNamed:@"CONTACT_ID" parentElement:table];
                 activityPending_list.CONTACT_ID =[TBXML textForElement:X_CONTACT_ID];
                 
-                
                 TBXMLElement *X_CONTACT_ADDRESS = [TBXML childElementNamed:@"CONTACT_ADDRESS" parentElement:table];
                 activityPending_list.CONTACT_ADDRESS =[TBXML textForElement:X_CONTACT_ADDRESS];
                 
@@ -501,7 +501,6 @@
                 NSLog(@"OptyID : %@",activityPending_list.OPTY_ID);
                 TBXMLElement *X_OPTY_NAME = [TBXML childElementNamed:@"OPTY_NAME" parentElement:table];
                 activityPending_list.OPTY_NAME =[TBXML textForElement:X_OPTY_NAME];
-
                 
                 TBXMLElement *X_OPTY_CREATED = [TBXML childElementNamed:@"OPTY_CREATED" parentElement:table];
                 activityPending_list.OPTY_CREATED =[TBXML textForElement:X_OPTY_CREATED];
@@ -509,10 +508,8 @@
                 TBXMLElement *X_SALES_STAGE_NAME = [TBXML childElementNamed:@"SALES_STAGE_NAME" parentElement:table];
                 activityPending_list.SALES_STAGE_NAME =[TBXML textForElement:X_SALES_STAGE_NAME];
                 
-                
                 TBXMLElement *X_SALE_STAGE_UPDATED_DATE = [TBXML childElementNamed:@"SALE_STAGE_UPDATED_DATE" parentElement:table];
                 activityPending_list.SALE_STAGE_UPDATED_DATE =[TBXML textForElement:X_SALE_STAGE_UPDATED_DATE];
-                
                 
                 TBXMLElement *X_LEAD_ASSIGNED_NAME = [TBXML childElementNamed:@"LEAD_ASSIGNED_NAME" parentElement:table];
                 activityPending_list.LEAD_ASSIGNED_NAME =[TBXML textForElement:X_LEAD_ASSIGNED_NAME];
@@ -522,8 +519,6 @@
                 
                 TBXMLElement *X_LEAD_POSITION = [TBXML childElementNamed:@"LEAD_POSITION" parentElement:table];
                 activityPending_list.LEAD_POSITION =[TBXML textForElement:X_LEAD_POSITION];
-                
-                
                 
                 TBXMLElement *X_LEAD_POSITION_ID = [TBXML childElementNamed:@"LEAD_POSITION_ID" parentElement:table];
                 activityPending_list.LEAD_POSITION_ID =[TBXML textForElement:X_LEAD_POSITION_ID];
@@ -567,9 +562,15 @@
     }
     
 }
+
+//Abhishek
+
 -(void)LinkCampaignListFound:(NSNotification*)notification  // Activity Response
 {
-      NSString *response=[[notification userInfo]objectForKey:@"response"];
+    
+    [self hideAlert]; //Abhishek
+    
+    NSString *response=[[notification userInfo]objectForKey:@"response"];
     
     NSLog(@"\n PendingActivityDetails_Connection response... %@ ",response);
     NSError *err;
@@ -817,7 +818,7 @@
         //[self.navigationController pushViewController:secondViewController animated:YES];
         [self presentViewController:secondViewController animated:YES completion:nil ];
         //  [self.navigationController popToRootViewControllerAnimated:TRUE];
-        // [self dismissViewControllerAnimated:YES completion:nil];
+        //  [self dismissViewControllerAnimated:YES completion:nil];
         //  [self.parentViewController.navigationController popToRootViewControllerAnimated:YES];
         //  [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     }
@@ -837,6 +838,9 @@
     }
     else{
    
+        
+        [self showAlert];//Abhishek
+        
       NSString * envelopeText1 = [NSString stringWithFormat:@"<SOAP:Envelope xmlns:SOAP=\"http://schemas.xmlsoap.org/soap/envelope/\">"
     @"<SOAP:Header xmlns:SOAP=\"http://schemas.xmlsoap.org/soap/envelope/\">"
     @"<header xmlns=\"http://schemas.cordys.com/General/1.0/\">"

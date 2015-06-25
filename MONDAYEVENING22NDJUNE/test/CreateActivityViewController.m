@@ -191,7 +191,6 @@
 {
     if (alertView.tag==50)
     {
-        
         alert = [[UIAlertView alloc] initWithTitle:@"Link Campaign"
                                            message:@"Do you want to Link Campaign"
                                           delegate:self
