@@ -1,0 +1,21 @@
+//
+//  Activity_List.m
+//  DSM
+//
+//  Created by Sachin Sharma on 13/04/15.
+//  Copyright (c) 2015 LetsIDev. All rights reserved.
+//
+
+#import "Activity_List.h"
+
+Activity_List *activity_list;
+NSMutableArray *Activities_ListArr,*Activities_Customer_list;
+NSMutableArray *Activities_ListDisplayArr;
+
+@implementation Activity_List
+
+@synthesize ACTIVITY_ROW_ID,ACTIVITY_TYPE,ACTIVITY_PLAN_START_DATE,ACTIVITY_CREATED_DATE,ACTIVITY_COMPLETION_DATE,ACTIVITY_STATUS,
+DESCRIPTION,OPTY_CREAT_DATE,OPPTY_ROWID,OPPTY_NAME,PARENT_PRODUCT_NAME,PRODUCT_LINE,VC,CONTACT_ID,CONTACT_NAME,CONTACT_CELL_NUM,
+CONTACT_ADDRESS,ADDRESS_ID,ACCOUNT_ID,ACCOUNT_NAME,ACCOUNT_PHONE_NUMBER,ACCOUNT_LOCATION,SALES_STAGE_DATE,SALE_STAGE,RNUM,RESULT_COUNT;
+
+@end
