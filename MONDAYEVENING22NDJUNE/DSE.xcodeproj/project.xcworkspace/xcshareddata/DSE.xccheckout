@@ -5,7 +5,11 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
+<<<<<<< Updated upstream
 	<string>B340714A-2864-451F-91C5-A92EE314DF1F</string>
+=======
+	<string>16BEFF50-A171-4B16-AF72-A103E8634120</string>
+>>>>>>> Stashed changes
 	<key>IDESourceControlProjectName</key>
 	<string>DSE</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
