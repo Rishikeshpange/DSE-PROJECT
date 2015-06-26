@@ -39,28 +39,23 @@ NSInteger INT_RESULTCOUNT;
     NSTimer *ticker;
     NSTimer *stopTimer;
 }
-
     @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
     @property (nonatomic, strong) NSDate *selectedDate;
 
-
 @end
 
+
 @implementation ActivitySearchViewController
-
-
 
 @synthesize activitypplIDPickerArr,activityPPLNamePickerArr,activityType_PickerArr,activityStatus,activityAssignTo,activityType_TalArr,activityAssignLOB;
 
 @synthesize textactivitytype,textDate,textdse,textppl,textfrmDate,textstatus,texttaluka;
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
     
+      [super viewDidLoad];
       self.automaticallyAdjustsScrollViewInsets = NO;
-  
-
-   
+    
 //    [self.view addSubview:indicator];
     
 //    button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -75,7 +70,6 @@ NSInteger INT_RESULTCOUNT;
 //    button.enabled = NO;
     
     self.SearchBTN.layer.cornerRadius = 4;
-
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"header_strip1.png"] forBarMetrics:UIBarMetricsDefault];
     
     // Navigation bar button on right side
@@ -96,7 +90,6 @@ NSInteger INT_RESULTCOUNT;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBarButtonItems];
     
     // Do any additional setup after loading the view.
-    
     appdelegate.ActivityList=[[NSMutableArray alloc] init];
     
     // Do any additional setup after loading the view.
@@ -115,9 +108,7 @@ NSInteger INT_RESULTCOUNT;
     activityStatus = [[NSMutableArray alloc]initWithObjects:@"Open",@"Done", nil];
     
     activityAssignLOB = [[NSMutableArray alloc] init];
-    
     activityAssignTo = [[NSMutableArray alloc] init];
-    
     activityType_TalArr = [[NSMutableArray alloc] init];
     
 //    search_activitiesresultpage_variables = [Search_Activitiesresultpage_variables sharedmanager]; //create singleton instance pf search activities class
@@ -131,9 +122,6 @@ NSInteger INT_RESULTCOUNT;
     [self CallActivity_Type]; // fuction for parsing activty type
     [self callActivity_TALUKA];
     [self callAssignTo];
-    
-    
-    
     
     textfrmDate.delegate = self;
     textDate.delegate = self;
@@ -154,8 +142,6 @@ NSInteger INT_RESULTCOUNT;
     textactivitytype.delegate = self;
     textstatus.delegate = self;
     textppl.delegate = self;
-    
-    
 }
 
 //abhishek
