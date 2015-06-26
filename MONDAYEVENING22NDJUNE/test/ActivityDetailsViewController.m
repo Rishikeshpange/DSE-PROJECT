@@ -130,6 +130,8 @@
 
 -(void)DoneActivity_Found:(NSNotification*)notification
 {
+    UITableView *tableView =self.tableview;
+   
     NSError *err;
     NSString *response=[[notification userInfo]objectForKey:@"response"];
     NSLog(@"\n DoneFound response... %@ ",response);
@@ -139,6 +141,7 @@
     
     if ([response rangeOfString:@"SOAP:Fault"].location != NSNotFound )
     {
+        
         UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"Attention!" message:@"Something gone wrong.Please try again" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alertView show];
     }
@@ -252,7 +255,7 @@
 {
     
     //[self hideAlertSuperview];//Abhishek //Test later
-    
+    UITableView *tableView =self.tableview;
     NSError *err;
     NSString *response=[[notification userInfo]objectForKey:@"response"];
     NSLog(@"\n DoneFound response... %@ ",response);
@@ -262,6 +265,7 @@
     
     if ([response rangeOfString:@"SOAP:Fault"].location != NSNotFound )
     {
+         [MBProgressHUD hideHUDForView:tableView animated:YES];
         UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"Attention!" message:@"Something gone wrong.Please try again" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alertView show];
     }
@@ -280,7 +284,7 @@
             TBXMLElement *IntegrationId =[TBXML childElementNamed:@"IntegrationId" parentElement:Action];
             TBXMLElement *Id =[TBXML childElementNamed:@"Id" parentElement:Action];
             
-            
+             [MBProgressHUD hideHUDForView:tableView animated:YES];
                         UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"Done" message:@"Activity Marked as Done" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
            // alertView.tag=50;
                         [alertView show];
@@ -341,6 +345,7 @@
 
 -(void)After_DoneActivity_Found:(NSNotification*)notification
 {
+    UITableView *tableView =self.tableview;
     NSError *err;
     NSString *response=[[notification userInfo]objectForKey:@"response"];
     NSLog(@"\n DoneFound response... %@ ",response);
@@ -350,6 +355,7 @@
     
     if ([response rangeOfString:@"SOAP:Fault"].location != NSNotFound )
     {
+         [MBProgressHUD hideHUDForView:tableView animated:YES];
         UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"Attention!" message:@"Something gone wrong.Please try again" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alertView show];
     }
@@ -369,7 +375,7 @@
             [self hideAlert];
            NSString *stringID = [TBXML textForElement:Id];
             NSLog(@"\nListOfContactInterface.....!!!!!%@",stringID);
-            
+             [MBProgressHUD hideHUDForView:tableView animated:YES];
             alert=[[UIAlertView alloc]initWithTitle:@"Attention!" message:@"Activity Done Successfully!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
             
