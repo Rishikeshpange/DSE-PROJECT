@@ -826,9 +826,6 @@
 }
 
 
-
-
-
 - (IBAction)linkcampaign:(id)sender {
     
     if([self.SALES_STAGE_NAME.text isEqualToString:@"Closed Lost at C1"])
@@ -838,7 +835,6 @@
     }
     else{
    
-        
         [self showAlert];//Abhishek
         
       NSString * envelopeText1 = [NSString stringWithFormat:@"<SOAP:Envelope xmlns:SOAP=\"http://schemas.xmlsoap.org/soap/envelope/\">"
@@ -900,7 +896,6 @@
     [request setHTTPBody:envelope];
     [request setValue:@"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     [request addValue:msglength forHTTPHeaderField:@"Content-Length"];
-    
     [[RequestDelegate alloc]initiateRequest:request name:@"Linkcampaign_Connection"];
   
     }

@@ -2503,9 +2503,9 @@
         NSNotification *errNotification = [NSNotification notificationWithName:@"getLobListConnectionFailed" object:nil userInfo:errDict];
         [[NSNotificationQueue defaultQueue]enqueueNotification:errNotification postingStyle:NSPostNow coalesceMask:NSNotificationCoalescingOnName forModes:nil];
     }
-    if (connection == get_PPL_List_Connection) /// Create Account Connection Error
+    
+    if (connection == get_PPL_List_Connection) // Create Account Connection Error
     {
-        
         NSLog(@"\n please check LOB... getCreateAccount_Connection!!!  ");
         
         NSDictionary *errDict;
@@ -2516,8 +2516,6 @@
         NSNotification *errNotification = [NSNotification notificationWithName:@"getPPLListConnectionFailed" object:nil userInfo:errDict];
         [[NSNotificationQueue defaultQueue]enqueueNotification:errNotification postingStyle:NSPostNow coalesceMask:NSNotificationCoalescingOnName forModes:nil];
     }
-    
-    
     
     //    if(connection == OPP)
     //    {

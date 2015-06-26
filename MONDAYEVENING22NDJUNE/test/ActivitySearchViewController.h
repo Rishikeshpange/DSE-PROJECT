@@ -15,9 +15,6 @@
 #import "RSLoadingIndicator.h"
 
 
-
-
-
 @interface ActivitySearchViewController : UIViewController<UIPickerViewDelegate,UIActionSheetDelegate,UITextFieldDelegate,RSLoadingIndicatorDelegate>
 
 {

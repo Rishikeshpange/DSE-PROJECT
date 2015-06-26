@@ -74,9 +74,7 @@ NSInteger INT_RESULTCOUNT;
 //    [indicator addSubview:button];
 //    button.enabled = NO;
     
-   
-
-    self.SearchBTN.layer.cornerRadius=4;
+    self.SearchBTN.layer.cornerRadius = 4;
 
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"header_strip1.png"] forBarMetrics:UIBarMetricsDefault];
     
@@ -99,21 +97,14 @@ NSInteger INT_RESULTCOUNT;
     
     // Do any additional setup after loading the view.
     
-    
-    
-    
     appdelegate.ActivityList=[[NSMutableArray alloc] init];
     
     // Do any additional setup after loading the view.
     
-    
-    
     appdelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];//AppDelegate instance
     userDetailsVal_ = [UserDetails_Var sharedmanager]; // usedetails instance
     
-    
-    
-appdelegate.fromACTIVITYDetail=@"cameFromActivityList";
+    appdelegate.fromACTIVITYDetail = @"cameFromActivityList";
     
     
     
@@ -123,15 +114,13 @@ appdelegate.fromACTIVITYDetail=@"cameFromActivityList";
     activityType_PickerArr = [[NSMutableArray alloc]init];// for Activty TYPE
     activityStatus = [[NSMutableArray alloc]initWithObjects:@"Open",@"Done", nil];
     
-    activityAssignLOB=[[NSMutableArray alloc] init];
+    activityAssignLOB = [[NSMutableArray alloc] init];
     
-    activityAssignTo=[[NSMutableArray alloc] init];
+    activityAssignTo = [[NSMutableArray alloc] init];
     
-    activityType_TalArr=[[NSMutableArray alloc] init];
+    activityType_TalArr = [[NSMutableArray alloc] init];
     
 //    search_activitiesresultpage_variables = [Search_Activitiesresultpage_variables sharedmanager]; //create singleton instance pf search activities class
-   
-    
     
     
     isActivitystatusClicked = false; // for checking  click on activitystatus textview
@@ -1576,6 +1565,8 @@ if (self.textfrmDate.text.length == 0 && textDate.text.length == 0)
 
 - (IBAction)textactivitytype:(id)sender {
     
+    [activityType_PickerArr sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)]; //Abhishek
+    
     [self.textactivitytype resignFirstResponder];
     actionSheet = [[UIActionSheet alloc] initWithTitle:nil
                                               delegate:self
@@ -1588,13 +1579,11 @@ if (self.textfrmDate.text.length == 0 && textDate.text.length == 0)
     actionSheet.cancelButtonIndex = [actionSheet addButtonWithTitle:@"Cancel"];
     actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
     
-    
-    
+
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         
         [actionSheet showFromRect:[(UITextField *)sender frame] inView:self.firstView animated:YES];
     }
-    
     
     else{
         
