@@ -2378,6 +2378,14 @@ UIAlertView *alert;
     NSLog(@"\nResponse....%@",response);
     
     TBXML * tbxml = [TBXML newTBXMLWithXMLString:response error:&err];
+    
+    if ([response rangeOfString:@"SOAP:Fault"].location != NSNotFound )
+    {
+        UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"Attention!" message:@"Something Went Wrong. Please try again later" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alertView show];
+    }
+
+    else{
     TBXMLElement *container = [TBXML childElementNamed:@"ns:SFATMCVContactInsertOrUpdate_Output" parentElement:[TBXML childElementNamed:@"SOAP:Body" parentElement:tbxml.rootXMLElement]];
     
     TBXMLElement *ListOfContactInterface = [TBXML childElementNamed:@"ListOfContactInterface" parentElement:container];
@@ -2410,6 +2418,7 @@ UIAlertView *alert;
     alertView.delegate = self;
     alertView.tag = 110;
     [alertView show];
+    }
 }
 
 
@@ -2470,6 +2479,14 @@ UIAlertView *alert;
     
     TBXML * tbxml = [TBXML newTBXMLWithXMLString:response error:&err];
     
+    if ([response rangeOfString:@"SOAP:Fault"].location != NSNotFound )
+    {
+        UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"Attention!" message:@"Something Went Wrong. Please try again later" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alertView show];
+    }
+    
+    else{
+    
     TBXMLElement *container = [TBXML childElementNamed:@"ns:SFATMCVContactQueryById_Output" parentElement:[TBXML childElementNamed:@"soapenv:Body" parentElement:tbxml.rootXMLElement]];
     
     TBXMLElement *ListOfContactInterface = [TBXML childElementNamed:@"ListOfContactInterface" parentElement:container];
@@ -2496,6 +2513,7 @@ UIAlertView *alert;
     
     //For Testing
     [self Call_createaccountaginstcontact];
+    }
     
 }
 
@@ -2582,6 +2600,13 @@ UIAlertView *alert;
     NSLog(@"\nResponse. CreateAccountAgainst_ContactFound...%@",response);
     
     TBXML * tbxml = [TBXML newTBXMLWithXMLString:response error:&err];
+    if ([response rangeOfString:@"SOAP:Fault"].location != NSNotFound )
+    {
+        UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"Attention!" message:@"Something Went Wrong. Please try again later" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alertView show];
+    }
+    
+    else{
     
     TBXMLElement *container = [TBXML childElementNamed:@"ns:SFATMCVAccountInsertOrUpdate_Output" parentElement:[TBXML childElementNamed:@"soapenv:Body" parentElement:tbxml.rootXMLElement]];
     
@@ -2596,6 +2621,7 @@ UIAlertView *alert;
     createaccount.AccountId_ = ID;
     NSLog(@"\n\n PersonalAddress_Idaccount...!!! %@ ",createaccount.AccountId_);
     [appdelegate hideAlert];
+    }
 }
 
 #pragma mark - UIAlertView Delegate

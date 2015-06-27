@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -7107,7 +7107,7 @@
                                                                     <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_4.png" translatesAutoresizingMaskIntoConstraints="NO" id="dHP-D0-Eep">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_18.png" translatesAutoresizingMaskIntoConstraints="NO" id="dHP-D0-Eep">
                                                                     <rect key="frame" x="14" y="121" width="19" height="21"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="21" id="22X-VM-wgR"/>
@@ -7869,10 +7869,10 @@
                                         <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_9new.png" translatesAutoresizingMaskIntoConstraints="NO" id="Mtg-Xm-Xam">
-                                        <rect key="frame" x="6" y="81" width="20" height="17"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_18.png" translatesAutoresizingMaskIntoConstraints="NO" id="Mtg-Xm-Xam">
+                                        <rect key="frame" x="8" y="82" width="20" height="19"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="17" id="OuT-7u-dsu"/>
+                                            <constraint firstAttribute="height" constant="19" id="OuT-7u-dsu"/>
                                             <constraint firstAttribute="width" constant="20" id="vCe-Za-AHa"/>
                                         </constraints>
                                     </imageView>
@@ -8018,7 +8018,7 @@
                                     <constraint firstItem="n7F-tz-zPM" firstAttribute="top" secondItem="7N7-MW-KSr" secondAttribute="bottom" constant="27" id="JTc-th-wk2"/>
                                     <constraint firstAttribute="trailing" secondItem="n7F-tz-zPM" secondAttribute="trailing" constant="253" id="KeO-62-I0L"/>
                                     <constraint firstItem="nqB-Yh-YKe" firstAttribute="leading" secondItem="5hc-fy-kwA" secondAttribute="trailing" constant="15" id="LHl-iI-0n3"/>
-                                    <constraint firstItem="Mtg-Xm-Xam" firstAttribute="leading" secondItem="Dqs-Q0-c99" secondAttribute="leading" constant="6" id="Mrv-iZ-xcs"/>
+                                    <constraint firstItem="Mtg-Xm-Xam" firstAttribute="leading" secondItem="Dqs-Q0-c99" secondAttribute="leading" constant="8" id="Mrv-iZ-xcs"/>
                                     <constraint firstItem="5hc-fy-kwA" firstAttribute="top" secondItem="ITy-tq-zcF" secondAttribute="bottom" constant="12" id="Ntb-49-zuu"/>
                                     <constraint firstItem="IDq-br-uDa" firstAttribute="top" secondItem="99m-2S-2YJ" secondAttribute="bottom" constant="5" id="OaN-vA-bs4"/>
                                     <constraint firstItem="YBb-9f-ye5" firstAttribute="top" secondItem="iU7-JB-SyF" secondAttribute="bottom" constant="-4" id="Ocg-0y-eI5"/>
@@ -8029,9 +8029,9 @@
                                     <constraint firstItem="Ta5-HE-vCV" firstAttribute="top" secondItem="n7F-tz-zPM" secondAttribute="bottom" constant="23" id="Uys-Dd-X76"/>
                                     <constraint firstItem="W7u-O2-ZOq" firstAttribute="leading" secondItem="7N7-MW-KSr" secondAttribute="trailing" constant="17" id="WXr-8f-kVM"/>
                                     <constraint firstItem="Kfl-Hi-19D" firstAttribute="leading" secondItem="Dqs-Q0-c99" secondAttribute="leading" constant="41" id="Wbh-Ni-hCx"/>
-                                    <constraint firstItem="IDq-br-uDa" firstAttribute="leading" secondItem="Mtg-Xm-Xam" secondAttribute="trailing" constant="15" id="Xfz-CR-c4d"/>
+                                    <constraint firstItem="IDq-br-uDa" firstAttribute="leading" secondItem="Mtg-Xm-Xam" secondAttribute="trailing" constant="13" id="Xfz-CR-c4d"/>
                                     <constraint firstItem="SSN-gQ-gqM" firstAttribute="leading" secondItem="Dqs-Q0-c99" secondAttribute="leading" id="Zi9-3B-KIK"/>
-                                    <constraint firstItem="Mtg-Xm-Xam" firstAttribute="top" secondItem="5hc-fy-kwA" secondAttribute="bottom" constant="26" id="Zvc-gI-R8C"/>
+                                    <constraint firstItem="Mtg-Xm-Xam" firstAttribute="top" secondItem="5hc-fy-kwA" secondAttribute="bottom" constant="27" id="Zvc-gI-R8C"/>
                                     <constraint firstAttribute="trailing" secondItem="Ta5-HE-vCV" secondAttribute="trailing" constant="260" id="dDR-y3-UV8"/>
                                     <constraint firstAttribute="trailing" secondItem="ppc-LC-27Y" secondAttribute="trailing" constant="8" id="feJ-1w-eVm"/>
                                     <constraint firstItem="iU7-JB-SyF" firstAttribute="leading" secondItem="Ta5-HE-vCV" secondAttribute="trailing" constant="19" id="hk1-MH-1zH"/>
@@ -8041,7 +8041,7 @@
                                     <constraint firstItem="FEY-8N-CAC" firstAttribute="top" secondItem="2Z3-ai-I26" secondAttribute="bottom" constant="-4" id="n1V-Rd-8rn"/>
                                     <constraint firstAttribute="height" constant="164" id="qRd-Dl-Y8l"/>
                                     <constraint firstItem="FEY-8N-CAC" firstAttribute="leading" secondItem="Dqs-Q0-c99" secondAttribute="leading" constant="41" id="tSw-ca-sLP"/>
-                                    <constraint firstItem="UGW-kd-TBC" firstAttribute="top" secondItem="Mtg-Xm-Xam" secondAttribute="bottom" constant="25" id="tWY-aM-z4I"/>
+                                    <constraint firstItem="UGW-kd-TBC" firstAttribute="top" secondItem="Mtg-Xm-Xam" secondAttribute="bottom" constant="22" id="tWY-aM-z4I"/>
                                     <constraint firstAttribute="width" secondItem="SSN-gQ-gqM" secondAttribute="width" id="tbd-Fm-BsM"/>
                                     <constraint firstItem="5hc-fy-kwA" firstAttribute="leading" secondItem="Dqs-Q0-c99" secondAttribute="leading" constant="9" id="tlA-lI-XAC"/>
                                     <constraint firstItem="oRU-Du-eVi" firstAttribute="top" secondItem="4yF-Ky-X7E" secondAttribute="bottom" constant="-4" id="vVL-D4-DZ7"/>
@@ -10118,7 +10118,7 @@
                                     </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.45098039220000002" green="0.71372549019999998" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -12877,6 +12877,7 @@
         <image name="icon_1.png" width="32" height="31"/>
         <image name="icon_11new.png" width="23" height="26"/>
         <image name="icon_14.png" width="23" height="28"/>
+        <image name="icon_18.png" width="28" height="34"/>
         <image name="icon_2.png" width="47" height="25"/>
         <image name="icon_3.png" width="29" height="28"/>
         <image name="icon_4.png" width="25" height="29"/>
@@ -12884,7 +12885,6 @@
         <image name="icon_5new.png" width="28" height="34"/>
         <image name="icon_6.png" width="26" height="27"/>
         <image name="icon_8new.png" width="32" height="31"/>
-        <image name="icon_9new.png" width="28" height="25"/>
         <image name="icon_call_2x.png" width="24" height="24"/>
         <image name="icon_mail_2x.png" width="30" height="23"/>
         <image name="icon_scroll.png" width="46" height="34"/>
@@ -12901,9 +12901,9 @@
         <image name="update_btn-1.png" width="177" height="71"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="g7n-P8-BKq"/>
-        <segue reference="Pg2-Z2-nma"/>
+        <segue reference="rbv-Mz-7nF"/>
         <segue reference="zAB-PB-GKD"/>
+        <segue reference="Pg2-Z2-nma"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -1537,11 +1537,11 @@ if (self.textfrmDate.text.length == 0 && textDate.text.length == 0)
     [self.navigationController pushViewController:activityListViewController_VC animated:YES];
     
     NSLog(@"\n\nshow result...... resultcount....%@",RESULTCOUNT);
-    NSLog(@"\n\nappdelegate.ActivityList....%@",[[appdelegate.ActivityList objectAtIndex:0] valueForKey:@"OPPTY_ROWID"]);
+   /* NSLog(@"\n\nappdelegate.ActivityList....%@",[[appdelegate.ActivityList objectAtIndex:0] valueForKey:@"OPPTY_ROWID"]);
     NSLog(@"\n\nappdelegate.ActivityList....%@",[[appdelegate.ActivityList objectAtIndex:1] valueForKey:@"OPPTY_ROWID"]);
      NSLog(@"\n\nappdelegate.ActivityList....%@",[[appdelegate.ActivityList objectAtIndex:2] valueForKey:@"OPPTY_ROWID"]);
      NSLog(@"\n\nappdelegate.ActivityList....%@",[[appdelegate.ActivityList objectAtIndex:3] valueForKey:@"OPPTY_ROWID"]);
-    NSLog(@"\n resultcount...... %u ",(unsigned)DisplaySearchActivitiesDetailsArray.count);
+    NSLog(@"\n resultcount...... %u ",(unsigned)DisplaySearchActivitiesDetailsArray.count);*/
     // [appdelegate hideAlert];
     //ActivitiesResult_VC *activitiesResult_VC = [self.storyboard instantiateViewControllerWithIdentifier:@"ActivitiesResult_VC"];
     //[self.navigationController pushViewController:activitiesResult_VC animated:YES];

@@ -64,13 +64,19 @@
     
     if ([appdelegate.ActivityList count ]==0)
     {
-        
+        alert = [[UIAlertView alloc] initWithTitle:@"Alert"
+                                           message:@"There are no activities"
+                                          delegate:self
+                                 cancelButtonTitle:@"OK"
+                                 otherButtonTitles:nil,nil];
+        [alert show];
+
     }
     else
     {
         Activities_ListArr=appdelegate.ActivityList;
     }
-    NSLog(@"OPPTY_ROWID:%@",[[appdelegate.ActivityList objectAtIndex:0] valueForKey:@"OPPTY_ROWID"]);
+   /* NSLog(@"OPPTY_ROWID:%@",[[appdelegate.ActivityList objectAtIndex:0] valueForKey:@"OPPTY_ROWID"]);*/
 //     NSLog(@"%@",[[Activities_ListArr objectAtIndex:0] valueForKey:@"OPPTY_ROWID"]);
 //    NSLog(@"%@",[[[Activities_ListArr objectAtIndex:0] allKeys] description]);
     //Search button
