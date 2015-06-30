@@ -910,6 +910,19 @@ NSString* RESULTCOUNT;
     }  //[self.navigationController pushViewController:activitiesResult_VC animated:YES];
   
 }
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+//{
+    if (toInterfaceOrientation==UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation==UIInterfaceOrientationLandscapeRight)
+        return YES;
+    
+    //return NO;
+}
 
 -(void)CallSearch2
 {
@@ -2076,7 +2089,13 @@ NSString* RESULTCOUNT;
     }
 }
 
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
+{
+    // Do view manipulation here.
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+}
 #pragma mark - Split view
+
 
 - (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
 {

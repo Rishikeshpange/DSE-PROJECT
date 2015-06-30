@@ -41,7 +41,7 @@
     appdelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
    
     self.username.text=@"JJOSHI1001680";
-    self.password.text=@"NANO2014";
+    self.password.text=@"TATA2015";
     
     [self.username setBackgroundColor:[UIColor clearColor]];
     [self.username.layer setBorderColor:[UIColor whiteColor].CGColor];
@@ -146,7 +146,7 @@
     if(self.username.text.length==0 || self.password.text.length==0)
     {
         [self hideAlert];
-        UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"Attention!" message:@"Please entered ID or password  correctly" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"Attention!" message:@"Please enter USER ID and PASSWORD correctly" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alertView show];
     }
     else{
@@ -352,6 +352,53 @@
 }
 
 
+//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
+//    //[image_signature setImage:[self resizeImage:image_signature.image]];
+//    return (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft);
+//}
+//-(BOOL)shouldAutorotate {
+//    return YES;
+//}
+//- (NSUInteger)supportedInterfaceOrientations {
+//   // [image_signature setImage:[self resizeImage:image_signature.image]];
+//    return UIInterfaceOrientationMaskLandscapeLeft;
+//}
+
+//-(BOOL)shouldAutorotate
+//{
+//    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+//    
+//    if (orientation==UIInterfaceOrientationLandscapeLeft || orientation==UIInterfaceOrientationLandscapeRight)
+//        return YES;
+//    
+//     return NO;
+////    if (orientation != UIInterfaceOrientationLandscapeLeft)
+////    {
+////        NSLog(@"UIInterfaceOrientationLandscapeLeft");
+////    
+////    }
+//    
+//  //  return YES;
+//}
+
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}
+
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+     return UIInterfaceOrientationMaskLandscapeLeft + UIInterfaceOrientationMaskLandscapeRight;
+}
+
+//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+//{
+//    if ( interfaceOrientation==UIInterfaceOrientationLandscapeRight)
+//        return YES;
+//    
+//    return NO;
+//}
 
 -(void)artifactFound:(NSNotification*)notification
 {
@@ -360,9 +407,10 @@
     NSString *response=[[notification userInfo]objectForKey:@"response"];
     if ([response rangeOfString:@"samlp:Response"].location == NSNotFound )
     {
+        [self hideAlert];
         //  appdelegate.artifact = @"MDFn+8e5dRDaRMRIwMY7nI84eEccbx+lIiXF/JlVUNBvPm0pFry+dR4M";
         //  [appdelegate hideAlert];
-        UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"Attention!" message:@"Error in connecting to server. Please try later!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"Attention!" message:@"Please enter valid USER ID/PASSWORD!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alertView show];
     }
     else{
@@ -519,6 +567,7 @@
     {
         NSLog(@"Dishkyauuu");
         //[appdelegate hideAlert];
+        [self hideAlert];
         UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"Attention!" message:@"The username or password you entered is incorrect.\n*The user account will be locked after 3 unsucessfull attempts." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alertView show];
         [self hideAlert];
@@ -903,25 +952,12 @@
 -(void)showAlert
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    //dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 3.00 * NSEC_PER_SEC);
-    /*dispatch_queue_t dispatchQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
-     
-     dispatch_async(dispatchQueue, ^(void){
-     });
-     /*
-     alertProgress = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
-     UIActivityIndicatorView *loadingView=[[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-     [loadingView startAnimating];
-     loadingView.frame=CGRectMake(130.0f, 82.0f, 20.0f, 20.0f);
-     [alertProgress addSubview:loadingView];
-     [alertProgress show];*/
-}
+    }
 -(void)hideAlert
 {
     //NSLog(@"Hide...Alert..");
     [MBProgressHUD hideHUDForView:self.view animated:YES];
-    
-    //   [alertProgress dismissWithClickedButtonIndex:0 animated:YES];
+ 
 }
 
 

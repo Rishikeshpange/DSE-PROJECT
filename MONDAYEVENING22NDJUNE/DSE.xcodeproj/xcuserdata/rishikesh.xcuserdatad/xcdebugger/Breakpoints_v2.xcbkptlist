@@ -1434,11 +1434,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "test/DetailViewController.m"
-            timestampString = "456225670.891874"
+            timestampString = "457366856.845221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1700"
-            endingLineNumber = "1700"
+            startingLineNumber = "1713"
+            endingLineNumber = "1713"
             landmarkName = "-CallSearchActivityMonth"
             landmarkType = "5">
          </BreakpointContent>
@@ -1450,11 +1450,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "test/DetailViewController.m"
-            timestampString = "456225670.891874"
+            timestampString = "457366856.845221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1822"
-            endingLineNumber = "1822"
+            startingLineNumber = "1835"
+            endingLineNumber = "1835"
             landmarkName = "-SearchActivitiesMonth_Connection:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1530,11 +1530,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "test/DetailViewController.m"
-            timestampString = "456225670.891874"
+            timestampString = "457366856.845221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1272"
-            endingLineNumber = "1272"
+            startingLineNumber = "1285"
+            endingLineNumber = "1285"
             landmarkName = "-searchActivitiesDashboard_Found:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1546,11 +1546,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "test/DetailViewController.m"
-            timestampString = "456225670.891874"
+            timestampString = "457366856.845221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1174"
-            endingLineNumber = "1174"
+            startingLineNumber = "1187"
+            endingLineNumber = "1187"
             landmarkName = "-CallSearch"
             landmarkType = "5">
          </BreakpointContent>
@@ -1610,11 +1610,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "test/DetailViewController.m"
-            timestampString = "456225670.891874"
+            timestampString = "457366856.845221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1444"
-            endingLineNumber = "1444"
+            startingLineNumber = "1457"
+            endingLineNumber = "1457"
             landmarkName = "-SearchActivitiesMonth_Connection1:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2570,11 +2570,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "test/DetailViewController.m"
-            timestampString = "456225670.891874"
+            timestampString = "457366856.845221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "914"
-            endingLineNumber = "914"
+            startingLineNumber = "927"
+            endingLineNumber = "927"
             landmarkName = "-CallSearch2"
             landmarkType = "5">
          </BreakpointContent>
@@ -2586,11 +2586,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "test/DetailViewController.m"
-            timestampString = "456225670.891874"
+            timestampString = "457366856.845221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "957"
-            endingLineNumber = "957"
+            startingLineNumber = "970"
+            endingLineNumber = "970"
             landmarkName = "-searchActivities_Found2:"
             landmarkType = "5">
          </BreakpointContent>
@@ -3984,6 +3984,22 @@
             startingLineNumber = "348"
             endingLineNumber = "348"
             landmarkName = "-MarkAsLostViewPush:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "test/DetailViewController.m"
+            timestampString = "457366856.845221"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "917"
+            endingLineNumber = "917"
+            landmarkName = "-shouldAutorotateToInterfaceOrientation:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
