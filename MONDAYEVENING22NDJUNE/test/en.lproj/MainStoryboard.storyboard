@@ -363,7 +363,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1.1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="5UF-wP-lCs">
                                 <rect key="frame" x="0.0" y="-6" width="1024" height="774"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7SW-fF-AsI">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7SW-fF-AsI">
                                 <rect key="frame" x="821" y="297" width="126" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Forgot Password">
@@ -372,7 +372,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y90-rR-TBf">
-                                <rect key="frame" x="679" y="297" width="126" height="20"/>
+                                <rect key="frame" x="706" y="296" width="126" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Remember Me">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -411,12 +411,22 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paU-Yp-knd">
+                                <rect key="frame" x="691" y="296" width="18" height="19"/>
+                                <state key="normal" image="uncheck.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnRemember:" destination="BSA-h4-4w0" eventType="touchUpInside" id="P3n-rr-QBA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1024" height="768"/>
                     <connections>
+                        <outlet property="Btnremeberme" destination="paU-Yp-knd" id="KFa-mT-4y5"/>
                         <outlet property="LoginButton" destination="qnv-ea-CnH" id="NkY-EJ-16R"/>
                         <outlet property="password" destination="y6p-EC-d9j" id="1fr-Vb-Ftj"/>
                         <outlet property="username" destination="CqT-Zz-WwG" id="UOu-lu-aID"/>
@@ -8342,7 +8352,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4P-S4-0dz">
                                 <rect key="frame" x="322" y="351" width="158" height="45"/>
                                 <color key="backgroundColor" red="0.45098039220000002" green="0.71372549019999998" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Cancel">
+                                <state key="normal" title="Clear">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -9641,7 +9651,7 @@
                                             <constraint firstAttribute="height" constant="36" id="wBF-68-gB5"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
-                                        <state key="normal" title="CANCEL">
+                                        <state key="normal" title="CLEAR">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -11342,7 +11352,7 @@
                                     <constraint firstAttribute="height" constant="37" id="Wy5-ML-7UK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="CANCEL">
+                                <state key="normal" title="CLEAR">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -12259,7 +12269,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KMq-xt-6RP">
                                 <rect key="frame" x="322" y="351" width="158" height="45"/>
                                 <color key="backgroundColor" red="0.45098039220000002" green="0.71372549019999998" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Cancel">
+                                <state key="normal" title="Clear">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -12795,7 +12805,7 @@
                                     <constraint firstAttribute="width" constant="97" id="TJV-in-fy9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
-                                <state key="normal" title="CANCEL">
+                                <state key="normal" title="CLEAR">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -12898,6 +12908,7 @@
         <image name="textbox.png" width="702" height="72"/>
         <image name="textlist.png" width="27" height="26"/>
         <image name="time.png" width="30" height="30"/>
+        <image name="uncheck.png" width="30" height="30"/>
         <image name="update_btn-1.png" width="177" height="71"/>
     </resources>
     <inferredMetricsTieBreakers>

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 
-@interface LostOptyViewController : UIViewController<UIActionSheetDelegate,UITextFieldDelegate>
+@interface LostOptyViewController : UIViewController<UIActionSheetDelegate,UITextFieldDelegate,UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *txtReason;
 @property (weak, nonatomic) IBOutlet UITextField *txtMakeLost;
 @property (weak, nonatomic) IBOutlet UITextField *txtModeLost;

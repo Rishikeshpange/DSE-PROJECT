@@ -16,11 +16,13 @@
 @interface LostOptyViewController ()
 {
     UIAlertView *alert;
+    UILabel *lbl;
 }
 @end
 
 @implementation LostOptyViewController
 @synthesize MakeLostSalesStageArr;
+@synthesize txtDescription;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,6 +48,17 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBarButtonItems];
     
+    
+    lbl = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 0.0,txtDescription.frame.size.width - 10.0, 34.0)];
+    
+    
+    [lbl setText:@"TYPE HERE"];
+    [lbl setFont:[UIFont systemFontOfSize:11]];
+    [lbl setBackgroundColor:[UIColor clearColor]];
+    [lbl setTextColor:[UIColor lightGrayColor]];
+    txtDescription.delegate = self;
+    
+    [txtDescription addSubview:lbl];
        
 //    self.NameLabel.text=[[self.appdelegate.OppurtunityList objectAtIndex:self.appdelegate.optyrow] valueForKey:@"CUSTOMER_ACCOUNT_NAME"];
 //    self.phoneNmuberLabel.text=[[self.appdelegate.OppurtunityList objectAtIndex:self.appdelegate.optyrow] valueForKey:@"CUSTOMER_PHONE_NUMBER"];
@@ -933,6 +946,41 @@
 //            //  [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
         }
     
+    }
+}
+
+-(void)textViewDidBeginEditing:(UITextView *)sender
+{
+    if ([sender isEqual:txtDescription])
+    {
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.1];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+        [UIView setAnimationBeginsFromCurrentState:YES];
+        
+        self.view.center = CGPointMake(self.view.center.x, 50.0);
+        [UIView commitAnimations];    }
+    
+    
+}
+
+
+
+
+- (void)textViewDidEndEditing:(UITextView *)theTextView
+{
+    if (![txtDescription hasText]) {
+        lbl.hidden = NO;
+    }
+}
+
+- (void) textViewDidChange:(UITextView *)textView
+{
+    if(![txtDescription hasText]) {
+        lbl.hidden = NO;
+    }
+    else{
+        lbl.hidden = YES;
     }
 }
 

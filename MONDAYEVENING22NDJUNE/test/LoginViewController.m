@@ -12,12 +12,15 @@
 #import "DetailViewController.h"
 #import "MBProgressHUD.h"
 #import "LoginViewController.h"
+#import "SSKeychain.h"
+#import "SSKeychainQuery.h"
 
 //#import "AppDelegate.h"
 @interface LoginViewController ()
 {
     NSString *userName,*passWord;
       NSArray *logingetUD;
+      int *imageflag;
 }
 @end
 
@@ -37,8 +40,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"login..");
-    
+    imageflag=0;
     appdelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    
+     [self.Btnremeberme setImage: [UIImage imageNamed:@"uncheck.png"] forState:UIControlStateNormal];
    
     self.username.text=@"JJOSHI1001680";
     self.password.text=@"TATA2015";
@@ -82,6 +87,11 @@
     else{
         [GlobalVariablesArray_ removeAllObjects];
     }
+    
+    NSString *password = [SSKeychain passwordForService:@"AnyService" account:@"AnyUser"];
+    NSString *usernamme = [SSKeychain passwordForService:@"AnyService" account:@"AnyUser1"];
+    
+      NSLog(@"username & Password Save:%@ %@",usernamme,password);
    // [self callArtifactRequest];
 
   // Do any additional setup after loading the view.
@@ -150,6 +160,20 @@
         [alertView show];
     }
     else{
+        
+        if(imageflag==0)
+        {
+            NSLog(@"do not remember");
+        }
+        else{
+            
+            
+            [SSKeychain setPassword:self.password.text forService:@"AnyService" account:@"AnyUser"];
+            [SSKeychain setPassword:self.username.text forService:@"AnyService" account:@"AnyUser1"];
+            
+        }
+        
+
         [self callArtifactRequest];
         
         userName=self.username.text;
@@ -273,6 +297,45 @@
     
 
    // [self dismissViewControllerAnimated:NO completion:nil];
+}
+- (IBAction)btnRemember:(id)sender {
+    
+    if(imageflag==0)
+    {
+        
+        [self.Btnremeberme setImage: [UIImage imageNamed:@"checked.png"] forState:UIControlStateNormal];
+        
+        
+        [SSKeychain setPassword:self.password.text forService:@"AnyService" account:@"AnyUser"];
+        [SSKeychain setPassword:self.username.text forService:@"AnyService" account:@"AnyUser1"];
+        
+        
+        NSLog(@"Remember mi ");
+        imageflag=1;
+    }
+    else{
+        
+        
+        [self.Btnremeberme setImage: [UIImage imageNamed:@"uncheck.png"] forState:UIControlStateNormal];
+        imageflag=0;
+        
+        
+        
+        
+    }
+    
+    
+    NSLog(@"Remember mi ");
+    
+    
+    
+    
+    /*
+     NSLog(@"Click...Remember");
+     [[NSUserDefaults standardUserDefaults] setValue:self.username.text forKey:@"username"];
+     [[NSUserDefaults standardUserDefaults] setValue:self.password.text forKey:@"password"];
+     [[NSUserDefaults standardUserDefaults] synchronize];
+     */
 }
 
 

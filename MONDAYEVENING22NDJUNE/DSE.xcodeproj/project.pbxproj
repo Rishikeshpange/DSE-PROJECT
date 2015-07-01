@@ -181,6 +181,10 @@
 		D9E3FB911B2072620080CFCB /* RSLoadingIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E3FB901B2072620080CFCB /* RSLoadingIndicator.m */; };
 		D9E4C96D1B0B1DB100EC9EDF /* dashBoardActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E4C96A1B0B1DB100EC9EDF /* dashBoardActivity.m */; };
 		D9E4C96E1B0B1DB100EC9EDF /* dashBoardActivity_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E4C96C1B0B1DB100EC9EDF /* dashBoardActivity_Cell.m */; };
+		D9E4DEBC1B4407C200E2F5A7 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E4DEB91B4407C200E2F5A7 /* SSKeychain.m */; };
+		D9E4DEBD1B4407C200E2F5A7 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E4DEBB1B4407C200E2F5A7 /* SSKeychainQuery.m */; };
+		D9E4DEC01B44095000E2F5A7 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = D9E4DEBE1B44095000E2F5A7 /* checked.png */; };
+		D9E4DEC11B44095000E2F5A7 /* uncheck.png in Resources */ = {isa = PBXBuildFile; fileRef = D9E4DEBF1B44095000E2F5A7 /* uncheck.png */; };
 		D9EA48371AEE3D86005387B4 /* SearchActivityList.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EA48361AEE3D86005387B4 /* SearchActivityList.m */; };
 		D9EC1DD81B17480E0025BE36 /* ETActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EC1DD51B17480E0025BE36 /* ETActivityIndicatorView.m */; };
 		D9EC1DD91B17480E0025BE36 /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EC1DD71B17480E0025BE36 /* Circle.m */; };
@@ -430,6 +434,12 @@
 		D9E4C96A1B0B1DB100EC9EDF /* dashBoardActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dashBoardActivity.m; sourceTree = "<group>"; };
 		D9E4C96B1B0B1DB100EC9EDF /* dashBoardActivity_Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dashBoardActivity_Cell.h; sourceTree = "<group>"; };
 		D9E4C96C1B0B1DB100EC9EDF /* dashBoardActivity_Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dashBoardActivity_Cell.m; sourceTree = "<group>"; };
+		D9E4DEB81B4407C200E2F5A7 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		D9E4DEB91B4407C200E2F5A7 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		D9E4DEBA1B4407C200E2F5A7 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
+		D9E4DEBB1B4407C200E2F5A7 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
+		D9E4DEBE1B44095000E2F5A7 /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
+		D9E4DEBF1B44095000E2F5A7 /* uncheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uncheck.png; sourceTree = "<group>"; };
 		D9EA48351AEE3D86005387B4 /* SearchActivityList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchActivityList.h; path = ../SearchActivityList.h; sourceTree = "<group>"; };
 		D9EA48361AEE3D86005387B4 /* SearchActivityList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchActivityList.m; path = ../SearchActivityList.m; sourceTree = "<group>"; };
 		D9EC1DD41B17480E0025BE36 /* ETActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETActivityIndicatorView.h; sourceTree = "<group>"; };
@@ -559,6 +569,8 @@
 		15B29A3B16E8E01900772375 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D9E4DEBE1B44095000E2F5A7 /* checked.png */,
+				D9E4DEBF1B44095000E2F5A7 /* uncheck.png */,
 				D9D13AEE1B2854B700531B81 /* time.png */,
 				D9D13AEC1B2852E900531B81 /* time_icon.png */,
 				D9909E901B27053A009A3AB8 /* calender1.png */,
@@ -635,6 +647,10 @@
 		842C86D51AB98DB000E46A2F /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				D9E4DEB81B4407C200E2F5A7 /* SSKeychain.h */,
+				D9E4DEB91B4407C200E2F5A7 /* SSKeychain.m */,
+				D9E4DEBA1B4407C200E2F5A7 /* SSKeychainQuery.h */,
+				D9E4DEBB1B4407C200E2F5A7 /* SSKeychainQuery.m */,
 				84D764741AA44E24008C1244 /* LoginViewController.h */,
 				D926E7161AEA12110062BD3F /* LoginViewController.m */,
 			);
@@ -964,6 +980,7 @@
 				D9909E871B22FBFF009A3AB8 /* icon_9 (1).png in Resources */,
 				842D4DA51AA5E9760049D5FA /* logo.png in Resources */,
 				D9A295F61ACEA155000AD9E6 /* 2X_manage_opty_icon_2.png in Resources */,
+				D9E4DEC01B44095000E2F5A7 /* checked.png in Resources */,
 				D9A295F71ACEA155000AD9E6 /* 2X_manage_opty_icon_3.png in Resources */,
 				D9A62AA71B21B5B700F815CC /* icon_check.png in Resources */,
 				D9D13AEF1B2854B700531B81 /* time.png in Resources */,
@@ -995,6 +1012,7 @@
 				D9DD06801AD547BB00FDBEB2 /* manage_opty_icon_3_2X.png in Resources */,
 				D9E1D01D1B304AA0003ECB5E /* icon_9new.png in Resources */,
 				D9C47E921AEF7BAB007157B5 /* icon_mail_1_2x.png in Resources */,
+				D9E4DEC11B44095000E2F5A7 /* uncheck.png in Resources */,
 				D9A62AA51B21B5B700F815CC /* icon_5.png in Resources */,
 				D9909E8D1B26F819009A3AB8 /* checkbox.png in Resources */,
 				D9C47E901AEF7BAB007157B5 /* icon_call_1_2x.png in Resources */,
@@ -1054,6 +1072,7 @@
 				D9EC1DD81B17480E0025BE36 /* ETActivityIndicatorView.m in Sources */,
 				84D764701AA44295008C1244 /* NeedViewController.m in Sources */,
 				D9DBF11F1ACBD75100E92A75 /* ContactViewCell.m in Sources */,
+				D9E4DEBD1B4407C200E2F5A7 /* SSKeychainQuery.m in Sources */,
 				D9CF9C731AED2E9E000DCE02 /* ActivitySearchViewController.m in Sources */,
 				D9F4BECB1B0F65770015B3DD /* AnalyticsReportViewController.m in Sources */,
 				D99AF5191B134457003F38CF /* ActivityUpdateViewController.m in Sources */,
@@ -1097,6 +1116,7 @@
 				D9CF9C551AED1C3F000DCE02 /* ManageOpportunity.m in Sources */,
 				D926E71A1AEA98A80062BD3F /* ContactsList.m in Sources */,
 				15B29A5416E8E01900772375 /* DetailViewController.m in Sources */,
+				D9E4DEBC1B4407C200E2F5A7 /* SSKeychain.m in Sources */,
 				D94F16271AD7DBEF002378A7 /* GlobalVariables.m in Sources */,
 				84D7646D1AA441A3008C1244 /* CreateOpportunityViewController.m in Sources */,
 			);

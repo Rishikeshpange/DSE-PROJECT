@@ -11,7 +11,7 @@
 #import "UserDetails_Var.h"
 #import "ActivityPendingList.h"
 #import "LinkCampaignListView.h"
-@interface CreateActivityViewController : UIViewController<UIActionSheetDelegate,UIPickerViewDataSource,UIPickerViewDelegate,UITextFieldDelegate,UITextViewDelegate>
+@interface CreateActivityViewController : UIViewController<UIActionSheetDelegate,UIPickerViewDataSource,UIPickerViewDelegate,UITextFieldDelegate,UITextViewDelegate,UITextViewDelegate>
 {
     
     UserDetails_Var *userDetailsVal_;

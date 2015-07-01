@@ -31,6 +31,8 @@
 @property (strong, nonatomic) IBOutlet UITextField *password;
 @property (strong, nonatomic) IBOutlet UIButton *LoginButton;
 
+@property (weak, nonatomic) IBOutlet UIButton *Btnremeberme;
+
 @property(strong,nonatomic) IBOutlet NSMutableData *webData;
 
 @property(strong,nonatomic) IBOutlet NSMutableString *AssertionArtifact;

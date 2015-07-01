@@ -15,12 +15,15 @@
 @interface CreateActivityViewController ()
 {
     UIAlertView *alert;
+    UILabel *lbl;
+  
 }
 @end
 
 @implementation CreateActivityViewController
 @synthesize activityType_PickerArr,activityCreate_Arr;
 @synthesize txtActivityType,txtActivityDate,txtActivityTime,descTxt;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -81,6 +84,18 @@
     
   //  NSLog(@"originalCenter:%ld",self.originalCenter );
 
+    
+    lbl = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 0.0,descTxt.frame.size.width - 10.0, 34.0)];
+    
+    
+    [lbl setText:@"TYPE HERE"];
+    [lbl setFont:[UIFont systemFontOfSize:11]];
+    [lbl setBackgroundColor:[UIColor clearColor]];
+    [lbl setTextColor:[UIColor lightGrayColor]];
+    descTxt.delegate = self;
+    
+    [descTxt addSubview:lbl];
+    
     _btnSave.enabled = YES; //Abhishek
     _btnSave.backgroundColor = [UIColor colorWithRed:(115/255.0)green:(182/255.0) blue:(68/255.0) alpha:1]; //Abhishek
     
@@ -1067,6 +1082,42 @@
         
     }
 }
+
+-(void)textViewDidBeginEditing:(UITextView *)sender
+{
+    if ([sender isEqual:descTxt])
+    {
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.1];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+        [UIView setAnimationBeginsFromCurrentState:YES];
+        
+        self.view.center = CGPointMake(self.view.center.x, 50.0);
+        [UIView commitAnimations];    }
+    
+    
+}
+
+
+
+
+- (void)textViewDidEndEditing:(UITextView *)theTextView
+{
+    if (![descTxt hasText]) {
+        lbl.hidden = NO;
+    }
+}
+
+- (void) textViewDidChange:(UITextView *)textView
+{
+    if(![descTxt hasText]) {
+        lbl.hidden = NO;
+    }
+    else{
+        lbl.hidden = YES;
+    }
+}
+
 
 -(void)showAlert
 {
