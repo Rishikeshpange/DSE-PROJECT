@@ -45,8 +45,8 @@
     
      [self.Btnremeberme setImage: [UIImage imageNamed:@"uncheck.png"] forState:UIControlStateNormal];
    
-    self.username.text=@"JJOSHI1001680";
-    self.password.text=@"TATA2015";
+//    self.username.text=@"JJOSHI1001680";
+//    self.password.text=@"TATA2015";
     
     [self.username setBackgroundColor:[UIColor clearColor]];
     [self.username.layer setBorderColor:[UIColor whiteColor].CGColor];
@@ -92,6 +92,23 @@
     NSString *usernamme = [SSKeychain passwordForService:@"AnyService" account:@"AnyUser1"];
     
       NSLog(@"username & Password Save:%@ %@",usernamme,password);
+    
+    self.username.text=usernamme;
+    self.password.text=password;
+    
+    
+    if(!usernamme)
+    {
+        
+        [self.Btnremeberme setBackgroundImage:[UIImage imageNamed:@"uncheck.png"] forState:UIControlStateNormal];
+        
+    }
+    else{
+        
+         [self.Btnremeberme setBackgroundImage:[UIImage imageNamed:@"checked.png"] forState:UIControlStateNormal];
+       // self.Btnremeberme.image=[UIImage imageNamed:@"checked.png"];
+        imageflag=1;
+    }
    // [self callArtifactRequest];
 
   // Do any additional setup after loading the view.
@@ -163,7 +180,8 @@
         
         if(imageflag==0)
         {
-            NSLog(@"do not remember");
+            [SSKeychain setPassword:@"" forService:@"AnyService" account:@"AnyUser"];
+            [SSKeychain setPassword:@"" forService:@"AnyService" account:@"AnyUser1"];
         }
         else{
             

@@ -45,6 +45,7 @@ NSString* RESULTCOUNT;
 @synthesize pieChartLeft = _pieChartCopy;
 @synthesize percentageLabel = _percentageLabel;
 @synthesize Opty_Arr;
+bool isShown = false;
 #pragma mark - Managing the detail item
 
 - (void)viewDidLoad
@@ -222,6 +223,7 @@ NSString* RESULTCOUNT;
     [super viewWillAppear:animated];
     
     NSLog(@"..... will ");
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getactivitiesForDashborad_Connection:) name:@"getactivitiesForMonth_Connection" object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(searchActivitiesDashboard_Found:) name:@"searchActivitiesDashboard_Found" object:nil];//Gautam //for search activites after pressing search button
     //OpportunitiesDashBoard_Found
     
@@ -278,7 +280,10 @@ NSString* RESULTCOUNT;
 }
 -(void)info_btn
 {
-    //  NSLog(@"Home biscuit from Sanfrancisco");
+//    [UIView animateWithDuration:0.25 animations:^{
+//        _cautionView.frame =  CGRectMake(130, 30, 0, 0);
+//    }];
+
 }
 -(void)logOut_btn
 {
@@ -910,6 +915,22 @@ NSString* RESULTCOUNT;
     }  //[self.navigationController pushViewController:activitiesResult_VC animated:YES];
   
 }
+
+- (void)btnToggleClick{
+    if (!isShown) {
+        _cautionView.frame =  CGRectMake(130, 20, 0, 0);
+        [UIView animateWithDuration:0.25 animations:^{
+            _cautionView.frame =  CGRectMake(130, 30, 100, 200);
+        }];
+        isShown = true;
+    } else {
+        [UIView animateWithDuration:0.25 animations:^{
+            _cautionView.frame =  CGRectMake(130, 30, 0, 0);
+        }];
+        isShown = false;
+    }
+}
+
 - (BOOL)shouldAutorotate
 {
     return YES;
@@ -1419,7 +1440,7 @@ NSString* RESULTCOUNT;
                                @"<activitystatus></activitystatus>"
                                @"<activitytype></activitytype>"
                                @"<rang1>1</rang1>"
-                               @"<rang2>50</rang2>"
+                               @"<rang2>51</rang2>"
                                @"<attr1></attr1>"
                                @"<attr2></attr2>"
                                @"<attr3></attr3>"
@@ -1611,17 +1632,17 @@ NSString* RESULTCOUNT;
                     dashboardActivityMonth_list.RESULT_COUNT = [TBXML textForElement:RESULT_COUNT];
                     
                     
+                    //                    RESULTCOUNT = searchActivity_list.RESULT_COUNT;
+
                     
-                    RESULTCOUNT = searchActivity_list.RESULT_COUNT;
-                    
-                    
+                      RESULTCOUNT = dashboardActivityMonth_list.RESULT_COUNT;
 
                     
                     TBXMLElement *X_ACTIVITY_STATUS = [TBXML childElementNamed:@"ACTIVITY_STATUS" parentElement:TABLE];
                     dashboardActivityMonth_list.ACTIVITY_STATUS =[TBXML textForElement:X_ACTIVITY_STATUS];
                     
                     getStaus=[TBXML textForElement:X_ACTIVITY_STATUS];
-                    NSLog(@"Status check..%@",getStaus);
+                /*    NSLog(@"Status check..%@",getStaus);
                     if ([getStaus isEqualToString:@"Open"]) {
                         NSLog(@"Status is Open");
                         [OpenStatus_Arr addObject:getStaus];
@@ -1632,7 +1653,7 @@ NSString* RESULTCOUNT;
                     {
                         NSLog(@"Diffrent ");
                     }
-                    
+                    */
                     
                     
                     TBXMLElement *X_PRODUCT_NAME = [TBXML childElementNamed:@"PRODUCT_LINE" parentElement:TABLE];
@@ -1643,8 +1664,8 @@ NSString* RESULTCOUNT;
                 NSLog(@"Counter.. %lu",(unsigned long)[dashboardActivities_Month_Arr count]);
                 NSLog(@"Counter: Open %lu",(unsigned long)[OpenStatus_Arr count]);
                 NSLog(@"Counter: Done %lu",(unsigned long)[DoneStatus_Arr count]);
-                
-                if([OpenStatus_Arr count]==0)
+                [self getactivitiesForDashborad];
+   /*            if([OpenStatus_Arr count]==0)
                 {
                     
                     NSLog(@"Open 0");
@@ -1673,6 +1694,346 @@ NSString* RESULTCOUNT;
                 [self.pieChartRight setShowPercentage:YES];
                 //[self.pieChartLeft setPieBackgroundColor:[UIColor colorWithWhite:0.95 alpha:1]];
                  [self.pieChartLeft setPieBackgroundColor:[UIColor colorWithRed:241/255.0 green:241/255.0 blue:241/255.0 alpha:1]];
+                [self.pieChartRight setPieCenter:CGPointMake(120, 110)];
+                [self.pieChartRight setUserInteractionEnabled:NO];
+                [self.pieChartRight setLabelShadowColor:[UIColor blackColor]];
+                [self.pieChartRight setLabelRadius:0];
+                
+                [[self.percentageLabel1 layer] setCornerRadius:61.0f];
+                [[self.percentageLabel1 layer] setMasksToBounds:YES];
+                self.sliceColors =[NSArray arrayWithObjects:
+                                   [UIColor colorWithRed:246/255.0 green:155/255.0 blue:0/255.0 alpha:1],
+                                   [UIColor colorWithRed:129/255.0 green:195/255.0 blue:29/255.0 alpha:1],
+                                   [UIColor colorWithRed:62/255.0 green:173/255.0 blue:219/255.0 alpha:1],
+                                   [UIColor colorWithRed:229/255.0 green:66/255.0 blue:115/255.0 alpha:1],
+                                   [UIColor colorWithRed:148/255.0 green:141/255.0 blue:139/255.0 alpha:1],nil];
+                
+                self.downArrow.transform = CGAffineTransformMakeRotation(M_PI);
+                [self viewDidAppear:YES];
+                
+                
+                _percentageLabel1.text=[NSString stringWithFormat:@"%d", [dashboardActivities_Month_Arr count]];*/
+                if(dashboardActivities_ListArr>=0){
+                }
+                else
+                {
+                    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Attention!" message:@"Server Error!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                    [alert show];
+                }
+                
+            }
+        }
+    }
+}
+-(void)getactivitiesForDashborad
+{
+    NSString * envelopeText1 =[NSString stringWithFormat:@"<SOAP:Envelope xmlns:SOAP=\"http://schemas.xmlsoap.org/soap/envelope/\">"
+                               @"<SOAP:Body>"
+                               @"<GetSFAActivityBasedOnSearchCriteria xmlns=\"com.cordys.tatamotors.masfasiebelwsapp\" preserveSpace=\"no\" qAccess=\"0\" qValues=\"\">"
+                               @"<positionid>%@</positionid>"
+                               @"<PPLName></PPLName>"
+                               @"<fromdate>%@</fromdate>"
+                               @"<todate>%@</todate>"
+                               @"<activitystatus></activitystatus>"
+                               @"<activitytype></activitytype>"
+                               @"<rang1>1</rang1>"
+                               @"<rang2>%@</rang2>"
+                               @"<attr1></attr1>"
+                               @"<attr2></attr2>"
+                               @"<attr3></attr3>"
+                               @"<salestage></salestage>"
+                               @"</GetSFAActivityBasedOnSearchCriteria>"
+                               @"</SOAP:Body>"
+                               @"</SOAP:Envelope>",userDetailsVal_.ROW_ID,MonthDate,FromDate,RESULTCOUNT];
+    
+    NSData *envelope = [envelopeText1 dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSURL * theurl = [NSURL URLWithString:[NSString stringWithFormat:@"%@&SAMLart=%@",appdelegate.URL,appdelegate.artifact]];
+    // NSLog(@"URL IS %@",[NSString stringWithFormat:@"%@&SAMLart=%@",appdelegate.URL,appdelegate.artifact]);
+    NSLog(@"URL IS %@",theurl);
+    // NSLog(@"REQUEST IS %@",envelopeText);
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:theurl];
+    
+    NSString * msglength = [NSString stringWithFormat:@"%i",[envelopeText1 length]];
+    
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:envelope];
+    [request setValue:@"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    [request addValue:msglength forHTTPHeaderField:@"Content-Length"];
+    
+    [[RequestDelegate alloc]initiateRequest:request name:@"getactivitiesForDashborad_Connection"];
+    
+    
+
+
+
+}
+
+-(void)getactivitiesForDashborad_Connection:(NSNotification*)notification
+{
+    
+    dashboardActivities_Month_Arr=[[NSMutableArray alloc] init];
+    
+    NSError *err;
+    NSString *response=[[notification userInfo]objectForKey:@"response"];
+    NSLog(@"\n _ActivitySearch_Found response...Month %@ ",response);
+    
+    TBXML * tbxml = [TBXML newTBXMLWithXMLString:response error:&err];
+    
+    if ([response rangeOfString:@"SOAP:Fault"].location != NSNotFound )
+    {
+        UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"Attention!" message:@"Server Error !" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alertView show];
+    }else{
+        NSLog(@"Ek....");
+        
+        TBXMLElement *soapBody = [TBXML childElementNamed:@"SOAP:Body" parentElement:tbxml.rootXMLElement];
+        TBXMLElement *container = [TBXML childElementNamed:@"GetSFAActivityBasedOnSearchCriteriaResponse" parentElement:soapBody];
+        if(container)
+        {
+            NSLog(@"inner");
+            TBXMLElement *tuple =[TBXML childElementNamed:@"tuple" parentElement:container];
+//            TBXMLElement *old =[TBXML childElementNamed:@"old" parentElement:tuple];
+//            TBXMLElement *TABLE =[TBXML childElementNamed:@"TABLE" parentElement:old];
+            if (tuple)
+            {
+                do {
+                    NSLog(@"Inside..");
+                    dashboardActivityMonth_list = nil;
+                    dashboardActivityMonth_list = [[dashBoardActivity alloc]init];
+                    TBXMLElement *old =[TBXML childElementNamed:@"old" parentElement:tuple];
+                    TBXMLElement *TABLE =[TBXML childElementNamed:@"TABLE" parentElement:old];
+                    
+                    //
+                    //                    TBXMLElement *table  = [TBXML childElementNamed:@"S_OPTY_POSTN" parentElement:[TBXML childElementNamed:@"old" parentElement:TABLE]];
+                    //                    TBXMLElement *OPTY_NAME = [TBXML childElementNamed:@"OPPTY_NAME" parentElement:TABLE];
+                    //
+                    //                    dashboardActivityMonth_list.OPPTY_NAME = [TBXML textForElement:OPTY_NAME];
+                    //                    // NSLog(@"X_PROSPECT_SRC : %@",searchActivity_list.OPTY_NAME);
+                    
+                    
+                    
+                    
+                    TBXMLElement *OPPTY_ROWID = [TBXML childElementNamed:@"OPPTY_ROWID" parentElement:TABLE];
+                    dashboardActivityMonth_list.OPPTY_ROWID = [TBXML textForElement:OPPTY_ROWID];
+                    //   NSLog(@"searchActivity_list.OPTY_ID: %@",searchActivity_list.OPTY_ID);
+                    
+                    //            TBXMLElement *PRODUCT_NAME = [TBXML childElementNamed:@"PRODUCT_NAME" parentElement:TABLE];
+                    //            searchActivity_list.PRODUCT_NAME = [TBXML textForElement:PRODUCT_NAME];
+                    
+                    TBXMLElement *PARENT_PRODUCT_NAME = [TBXML childElementNamed:@"PARENT_PRODUCT_NAME" parentElement:TABLE];
+                    dashboardActivityMonth_list.PARENT_PRODUCT_NAME = [TBXML textForElement:PARENT_PRODUCT_NAME];
+                    
+                    
+                    TBXMLElement *OPTY_CREAT_DATE = [TBXML childElementNamed:@"OPTY_CREAT_DATE" parentElement:TABLE];
+                    dashboardActivityMonth_list.OPTY_CREAT_DATE = [TBXML textForElement:OPTY_CREAT_DATE];
+                    
+                    TBXMLElement *ACCOUNT_NAME = [TBXML childElementNamed:@"ACCOUNT_NAME" parentElement:TABLE];
+                    dashboardActivityMonth_list.ACCOUNT_NAME = [TBXML textForElement:ACCOUNT_NAME];
+                    
+                    TBXMLElement *ACCOUNT_PHONE_NUMBER = [TBXML childElementNamed:@"ACCOUNT_PHONE_NUMBER" parentElement:TABLE];
+                    dashboardActivityMonth_list.ACCOUNT_PHONE_NUMBER = [TBXML textForElement:ACCOUNT_PHONE_NUMBER];
+                    
+                    
+                    TBXMLElement *ACCOUNT_ID = [TBXML childElementNamed:@"ACCOUNT_ID" parentElement:TABLE];
+                    dashboardActivityMonth_list.ACCOUNT_ID = [TBXML textForElement:ACCOUNT_ID];
+                    
+                    TBXMLElement *SALE_STAGE = [TBXML childElementNamed:@"SALE_STAGE" parentElement:TABLE];
+                    dashboardActivityMonth_list.SALE_STAGE = [TBXML textForElement:SALE_STAGE];
+                    
+                    TBXMLElement *SALES_STAGE_DATE = [TBXML childElementNamed:@"SALES_STAGE_DATE" parentElement:TABLE];
+                    dashboardActivityMonth_list.SALES_STAGE_DATE = [TBXML textForElement:SALES_STAGE_DATE];
+                    
+                    
+                    //            TBXMLElement *LEAD_ASSIGNED_NAME = [TBXML childElementNamed:@"LEAD_ASSIGNED_NAME" parentElement:TABLE];
+                    //            searchActivity_list.LEAD_ASSIGNED_NAME = [TBXML textForElement:LEAD_ASSIGNED_NAME];
+                    //
+                    //            TBXMLElement *LEAD_ASSIGNED_CELL_NUMBER = [TBXML childElementNamed:@"LEAD_ASSIGNED_CELL_NUMBER" parentElement:TABLE];
+                    //            searchActivity_list.LEAD_ASSIGNED_CELL_NUMBER = [TBXML textForElement:LEAD_ASSIGNED_CELL_NUMBER];
+                    //
+                    //
+                    //            TBXMLElement *LEAD_ASSIGNED_POSITION_NAME = [TBXML childElementNamed:@"LEAD_ASSIGNED_POSITION_NAME" parentElement:TABLE];
+                    //            searchActivity_list.LEAD_ASSIGNED_POSITION_NAME = [TBXML textForElement:LEAD_ASSIGNED_POSITION_NAME];
+                    //
+                    //            TBXMLElement *LEAD_ASSIGNED_POSITION_ID = [TBXML childElementNamed:@"LEAD_ASSIGNED_POSITION_ID" parentElement:TABLE];
+                    //            searchActivity_list.LEAD_ASSIGNED_POSITION_ID = [TBXML textForElement:LEAD_ASSIGNED_POSITION_ID];
+                    
+                    
+                    
+                    //            TBXMLElement *POSTN_TYPE_CD = [TBXML childElementNamed:@"POSTN_TYPE_CD" parentElement:TABLE];
+                    //            searchActivity_list.POSTN_TYPE_CD = [TBXML textForElement:POSTN_TYPE_CD];
+                    
+                    
+                    
+                    TBXMLElement *CONTACT_ID = [TBXML childElementNamed:@"CONTACT_ID" parentElement:TABLE];
+                    dashboardActivityMonth_list.CONTACT_ID = [TBXML textForElement:CONTACT_ID];
+                    
+                    TBXMLElement *CONTACT_NAME = [TBXML childElementNamed:@"CONTACT_NAME" parentElement:TABLE];
+                    dashboardActivityMonth_list.CONTACT_NAME = [TBXML textForElement:CONTACT_NAME];
+                    
+                    TBXMLElement *CONTACT_CELL_NUM = [TBXML childElementNamed:@"CONTACT_CELL_NUM" parentElement:TABLE];
+                    dashboardActivityMonth_list.CONTACT_CELL_NUM = [TBXML textForElement:CONTACT_CELL_NUM];
+                    
+                    TBXMLElement *CONTACT_ADDRESS = [TBXML childElementNamed:@"CONTACT_ADDRESS" parentElement:TABLE];
+                    dashboardActivityMonth_list.CONTACT_ADDRESS = [TBXML textForElement:CONTACT_ADDRESS];
+                    
+                    TBXMLElement *ADDRESS_ID = [TBXML childElementNamed:@"ADDRESS_ID" parentElement:TABLE];
+                    dashboardActivityMonth_list.ADDRESS_ID = [TBXML textForElement:ADDRESS_ID];
+                    
+                    //            TBXMLElement *ACTIVITY_PENDING_TYPE = [TBXML childElementNamed:@"ACTIVITY_PENDING_TYPE" parentElement:TABLE];
+                    //            searchActivity_list.ACTIVITY_PENDING_TYPE = [TBXML textForElement:ACTIVITY_PENDING_TYPE];
+                    
+                    
+                    TBXMLElement *ACTIVITY_ID = [TBXML childElementNamed:@"ACTIVITY_ROW_ID" parentElement:TABLE];
+                    dashboardActivityMonth_list.ACTIVITY_ROW_ID = [TBXML textForElement:ACTIVITY_ID];
+                    
+                    TBXMLElement *PLANNED_START_DATE = [TBXML childElementNamed:@"ACTIVITY_PLAN_START_DATE" parentElement:TABLE];
+                    dashboardActivityMonth_list.ACTIVITY_PLAN_START_DATE = [TBXML textForElement:PLANNED_START_DATE];
+                    
+                    
+                    TBXMLElement *ACTIVITY_CREATED_DATE = [TBXML childElementNamed:@"ACTIVITY_CREATED_DATE" parentElement:TABLE];
+                    dashboardActivityMonth_list.ACTIVITY_CREATED_DATE = [TBXML textForElement:ACTIVITY_CREATED_DATE];
+                    
+                    
+                    
+                    
+                    TBXMLElement *ACTIVITY_DESCRIPTION = [TBXML childElementNamed:@"DESCRIPTION" parentElement:TABLE];
+                    dashboardActivityMonth_list.DESCRIPTION = [TBXML textForElement:ACTIVITY_DESCRIPTION];
+                    
+                    TBXMLElement *ACTIVITY_STATUS = [TBXML childElementNamed:@"ACTIVITY_STATUS" parentElement:TABLE];
+                    dashboardActivityMonth_list.ACTIVITY_STATUS = [TBXML textForElement:ACTIVITY_STATUS];
+                    
+                    //            TBXMLElement *X_TALUKA = [TBXML childElementNamed:@"X_TALUKA" parentElement:TABLE];
+                    //            searchActivity_list.X_TALUKA = [TBXML textForElement:X_TALUKA];
+                    
+                    
+                    TBXMLElement *X_PROSPECT_SRC = [TBXML childElementNamed:@"X_PROSPECT_SRC" parentElement:TABLE];
+                    dashboardActivityMonth_list.X_PROSPECT_SRC = [TBXML textForElement:X_PROSPECT_SRC];
+                    
+                    
+                    TBXMLElement *ACCOUNT_LOCATION = [TBXML childElementNamed:@"ACCOUNT_LOCATION" parentElement:TABLE];
+                    dashboardActivityMonth_list.ACCOUNT_LOCATION = [TBXML textForElement:ACCOUNT_LOCATION];
+                    
+                    TBXMLElement *ACTIVITY_TYPE = [TBXML childElementNamed:@"ACTIVITY_TYPE" parentElement:TABLE];
+                    dashboardActivityMonth_list.ACTIVITY_TYPE = [TBXML textForElement:ACTIVITY_TYPE];
+                    NSLog(@"%@",searchActivity_list.ACTIVITY_TYPE);
+                    //            TBXMLElement *ACTIVITY_CREATED_DATE = [TBXML childElementNamed:@"ACTIVITY_CREATED_DATE" parentElement:TABLE];
+                    //            searchActivity_list.activity_c= [TBXML textForElement:ACTIVITY_CREATED_DATE];
+                    
+                    TBXMLElement *ACTIVITY_COMPLETION_DATE = [TBXML childElementNamed:@"ACTIVITY_COMPLETION_DATE" parentElement:TABLE];
+                    dashboardActivityMonth_list.ACTIVITY_COMPLETION_DATE = [TBXML textForElement:ACTIVITY_COMPLETION_DATE];
+                    
+                    TBXMLElement *PRODUCT_LINE = [TBXML childElementNamed:@"PRODUCT_LINE" parentElement:TABLE];
+                    dashboardActivityMonth_list.PRODUCT_LINE = [TBXML textForElement:PRODUCT_LINE];
+                    TBXMLElement *VC = [TBXML childElementNamed:@"VC" parentElement:TABLE];
+                    dashboardActivityMonth_list.VC = [TBXML textForElement:VC];
+                    
+                    TBXMLElement *RESULT_COUNT = [TBXML childElementNamed:@"RESULT_COUNT" parentElement:TABLE];
+                    dashboardActivityMonth_list.RESULT_COUNT = [TBXML textForElement:RESULT_COUNT];
+                    
+                    
+                    
+                    RESULTCOUNT = searchActivity_list.RESULT_COUNT;
+                    
+                    
+                    TBXMLElement *X_ACTIVITY_STATUS = [TBXML childElementNamed:@"ACTIVITY_STATUS" parentElement:TABLE];
+                    dashboardActivityMonth_list.ACTIVITY_STATUS =[TBXML textForElement:X_ACTIVITY_STATUS];
+                    
+                    getStaus=[TBXML textForElement:X_ACTIVITY_STATUS];
+                    
+                   
+                    NSLog(@"Status check..%@",getStaus);
+                    NSLog(@"Activity_row_id..1-7EEZKFM%@",dashboardActivityMonth_list.ACTIVITY_ROW_ID);
+                    
+                    if ([getStaus isEqualToString:@"Open"])
+                    {
+                        NSLog(@"Status is Open");
+                        [OpenStatus_Arr addObject:getStaus];
+                    }
+                    else if([getStaus isEqualToString:@"Done"])
+                    {
+                        NSLog(@"status Done");
+                        [DoneStatus_Arr addObject:getStaus];
+                    }else
+                    {
+                        NSLog(@"Diffrent ");
+                    }
+                    
+                    
+                    
+                    TBXMLElement *X_PRODUCT_NAME = [TBXML childElementNamed:@"PRODUCT_LINE" parentElement:TABLE];
+                    dashboardActivityMonth_list.PRODUCT_LINE =[TBXML textForElement:X_PRODUCT_NAME];
+                    
+                    [dashboardActivities_Month_Arr addObject:dashboardActivityMonth_list];
+                } while ((tuple = tuple->nextSibling));
+                NSLog(@"Counter.. %lu",(unsigned long)[dashboardActivities_Month_Arr count]);
+                NSLog(@"Counter: Open %lu",(unsigned long)[OpenStatus_Arr count]);
+                NSLog(@"Counter: Done %lu",(unsigned long)[DoneStatus_Arr count]);
+               // [self getactivitiesForDashborad];
+             /*   if([OpenStatus_Arr count]==0)
+                {
+                    
+                    NSLog(@"Open 0");
+                    self.slices = [NSMutableArray arrayWithCapacity:1];
+                    NSNumber * blah1 = [NSNumber numberWithInt:100];
+                    _slices= [NSMutableArray arrayWithObjects: blah1,nil];
+                    
+                }else if ([DoneStatus_Arr count]==0)
+                {
+                    NSLog(@"Done 0");
+                    self.slices = [NSMutableArray arrayWithCapacity:1];
+                    NSNumber * blah1 = [NSNumber numberWithInt:100];
+                    _slices= [NSMutableArray arrayWithObjects: blah1,nil];
+                }else
+                {
+                    NSLog(@"Extra");
+                }
+                */
+                float opencount = [OpenStatus_Arr count];
+                float donecount = [DoneStatus_Arr count];
+                
+                NSLog(@"open status array %f",opencount);
+                
+                float total = opencount+donecount;
+                
+                float devidesum=0;
+                
+                devidesum = (float)opencount/total;
+                NSLog(@".... %f",devidesum);
+                
+                float opencountprcnt=devidesum*100.0f;
+                
+                NSLog(@"percent calculation opencount %f",opencountprcnt);
+                
+                
+                devidesum = (float)donecount/total;
+                NSLog(@".... %f",devidesum);
+                
+                float donecountprcnt=devidesum*100.0f;
+                
+                NSLog(@"percent calculation donecount %f",donecountprcnt);
+                
+                
+                
+                
+                self.slices = [NSMutableArray arrayWithCapacity:2];
+                
+                NSNumber * c0count =[NSNumber numberWithFloat:opencountprcnt];
+                
+                NSNumber * c1count =[NSNumber numberWithFloat:donecountprcnt];
+                
+                
+                _slices= [NSMutableArray arrayWithObjects: c0count,c1count,nil];
+                
+                [self.pieChartRight setDataSource:self];
+                [self.pieChartRight setStartPieAngle:M_PI_2];
+                [self.pieChartRight setAnimationSpeed:1.0];
+                [self.pieChartRight setLabelFont:[UIFont fontWithName:@"DBLCDTempBlack" size:24]];
+                // [self.pieChartLeft setLabelRadius:160];
+                [self.pieChartRight setShowPercentage:YES];
+                //[self.pieChartLeft setPieBackgroundColor:[UIColor colorWithWhite:0.95 alpha:1]];
+                [self.pieChartLeft setPieBackgroundColor:[UIColor colorWithRed:241/255.0 green:241/255.0 blue:241/255.0 alpha:1]];
                 [self.pieChartRight setPieCenter:CGPointMake(120, 110)];
                 [self.pieChartRight setUserInteractionEnabled:NO];
                 [self.pieChartRight setLabelShadowColor:[UIColor blackColor]];
@@ -1983,7 +2344,6 @@ NSString* RESULTCOUNT;
                     {
                         NSLog(@"Diffrent ");
                     }
-                    
                     
                     
                     TBXMLElement *X_PRODUCT_NAME = [TBXML childElementNamed:@"PRODUCT_NAME" parentElement:table];

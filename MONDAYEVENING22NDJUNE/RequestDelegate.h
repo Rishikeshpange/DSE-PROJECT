@@ -29,7 +29,8 @@ static void *mainViewControllerVC;
     *getCreateAccountaginstcontact_Connection,*getSearchContactConnectiondashboard,*getSearchActivitiesMonthConnectiondashboard,*getdashboardOpportunityConnection,*getSearchOpportunityConnection1 ,*
     getSearchActivitiesConnection1  ,*getPLAnalyticsConnection ,*getPPLAnalyticsConnection,*getdsewisereport,*
     getSearchActivitiesConnection2, *Done_ActivityConnection,*
-    After_Done_ActivityConnection ,*AfterQuoteCreationConnection ,*getupdateActivityConnection,*getAllOpportunity1 ,*ActivityDetailsConnection,*Done_Activity_second_request_Connection;
+    After_Done_ActivityConnection ,*AfterQuoteCreationConnection ,*getupdateActivityConnection,*getAllOpportunity1 ,*ActivityDetailsConnection,*Done_Activity_second_request_Connection,*
+    getactivitiesForMonthConnection;
     
     NSMutableData *artifactData, *authenticateOIDData, *getDistributorDetailsData, *getPricingListData, *getRetailerDetailsData, *getRetailerLandedPriceData, *bpmStatusData, *getDistPosData, *getInventoryData, *placeOrderData, *accessTokenData, *getOrderNumberData, *saveDraftData, *viewDraftsData, *updateMRPData, *updateQuantityData, *deletePartData, *resetPasswordData, *getAllOrdersData, *changeOrderStatusData
     , *CurrentDateData ,*userDetailsData ,*opportunityCountData  ,*SaleStageForSearchOpportunityData ,*SalesOppAssingTOData,*SaleStagePPLForSearchOpportunityData,*SaleTahshilSearchOpportunityData,*Search_OpportunitiesData ,*ActivityDetailsData,*SaleAllOpportunity
@@ -37,7 +38,7 @@ static void *mainViewControllerVC;
     *OpportunityLOB_AgianstContactData , *OpportunityPPL_AgianstContactData ,*OpportunityPL_AgianstContactData ,*OpportunityProductName_AgianstContactData ,*OpportunityApplication_AgianstContactData
     ,*CreateOpportunity_AgainstContactData ,*getSearchAccountData   , *getAcct_ContactDetailsData , *CreateContacWithAccountDetails_Data,*CreateQuoteData
     ,*CreateMakeLostTo_Data,*CreateModelLostTo_Data, *CreateReasonLostTo_Data   ,*LostOpportunityData ,*getActivityForOpportunityData ,*getCreateActivity_ForOpportunityData ,*getCreateAccount_Data,*getLobList,*getPPL_List_Data,*getPL_List_Data,*getApplication_List_Data,*getFinancier_List_Data,*getIndian_States_List_Data,*getDistrict_List_Data,*getCityList_Data,*getPostalCode_List_Data,*getTaluka_List_Data,*getContact_List_Data,*PendingActivityDetailsData ,  *ActivityCreateTypeData,*Linkcampaign_Data,*Select_Linkcampaign_Data ,*Reason_lost_Data,*Make_lost_Data,*Model_lost_Data,*Lost_Opty_Data, *adressIDdata,*ContactSavedata,*ProceedToQuoteCreationdata,*GetProductdata,* UpdateOptydata,*PL_ProductID_Data,*getCreateAccountaginstcontact_Data,*SearchContactDataDashboard,*SearchActivitiesMonthDataDashboard,*GetOpportunityDashboard,*Search_OpportunitiesData1,*seachActivitiesData1, *getPLAnalyticsData, *getPPLAnalyticsData, *dsewisereport,*seachActivitiesData2,* Done_ActivityData,*After_Done_ActivityData ,*AfterQuoteCreationData,* PendingActivtyUpdate, *SaleAllOpportunity1,* getPendingActivityDetailsData,*
-    Done_Activity_second_request_Data;
+    Done_Activity_second_request_Data,*getactivitiesForDataDashboard;
 }
 -(void)initiateRequest:(NSURLRequest*)request name:(NSString*)name;
 

@@ -787,7 +787,14 @@
         [getSearchActivitiesMonthConnectiondashboard scheduleInRunLoop: [NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
         [getSearchActivitiesMonthConnectiondashboard start];
     }//getActivityDone
-    
+    else if([name isEqualToString:@"getactivitiesForDashborad_Connection"]) //for search opportunity screen // for sale stage
+    {
+        NSLog(@"SENDING Product Nname");
+        getactivitiesForDataDashboard = [[NSMutableData alloc]init];
+        getactivitiesForMonthConnection = [[NSURLConnection alloc]initWithRequest:request delegate:self startImmediately:NO];
+        [getactivitiesForMonthConnection scheduleInRunLoop: [NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+        [getactivitiesForMonthConnection start];
+    }
     
     
     else if([name isEqualToString:@"Opty_Connection_dashBoard"]) //for search opportunity screen // for sale stage
@@ -1118,6 +1125,11 @@
     else if(connection == getSearchActivitiesMonthConnectiondashboard) //Gautam's //For sale stage in search opportunity screen Details
         [SearchActivitiesMonthDataDashboard setLength:0];
     
+    
+    
+    else if(connection == getactivitiesForMonthConnection) //Gautam's //For sale stage in search opportunity screen Details
+        [getactivitiesForDataDashboard setLength:0];
+    
     else if(connection == getdashboardOpportunityConnection) //Gautam's //For sale stage in search opportunity screen Details
         [GetOpportunityDashboard setLength:0];
     
@@ -1393,6 +1405,11 @@
     
     else if(connection == getSearchActivitiesMonthConnectiondashboard)//Gautam's //For sale stage in search opportunity screen Details
         [SearchActivitiesMonthDataDashboard appendData:data];
+    
+   
+    
+    else if(connection == getactivitiesForMonthConnection)//Gautam's //For sale stage in search opportunity screen Details
+        [getactivitiesForDataDashboard appendData:data];
     
     else if(connection == getdashboardOpportunityConnection)//Gautam's //For sale stage in search opportunity screen Details
         [GetOpportunityDashboard appendData:data];
@@ -2290,6 +2307,17 @@
         NSLog(@"responseString Response is.....ofProduct %@",responseString);
         [self CheckSamalArtExpires:responseString];//For checking samalArt Expiration
         NSNotification *SaleStagePPLNotification = [NSNotification notificationWithName:@"SearchActivitiesMonth_Connection" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:responseString,@"response", nil]];
+        // NSLog(@"N0tificationsss %@",SaleStagePPLNotification);
+        [[NSNotificationQueue defaultQueue]enqueueNotification:SaleStagePPLNotification postingStyle:NSPostNow coalesceMask:NSNotificationCoalescingOnName forModes:nil];
+        
+    }
+    
+    else if(connection == getactivitiesForMonthConnection) //Gautam's For PPL For Search Opportunity Connection
+    {
+        NSString *responseString = [[NSString alloc] initWithBytes:[getactivitiesForDataDashboard mutableBytes] length:[getactivitiesForDataDashboard length] encoding:NSUTF8StringEncoding];
+        NSLog(@"responseString Response is.....ofProduct %@",responseString);
+        [self CheckSamalArtExpires:responseString];//For checking samalArt Expiration
+        NSNotification *SaleStagePPLNotification = [NSNotification notificationWithName:@"getactivitiesForMonth_Connection" object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:responseString,@"response", nil]];
         // NSLog(@"N0tificationsss %@",SaleStagePPLNotification);
         [[NSNotificationQueue defaultQueue]enqueueNotification:SaleStagePPLNotification postingStyle:NSPostNow coalesceMask:NSNotificationCoalescingOnName forModes:nil];
         

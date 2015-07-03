@@ -333,11 +333,12 @@
                         <outlet property="pieChartLeft" destination="hfW-gj-tdl" id="nWw-92-Ixg"/>
                         <outlet property="pieChartRight" destination="JTQ-hN-5hF" id="LQs-GH-JoP"/>
                         <outlet property="tblview" destination="TOh-zd-K2V" id="rJB-Tn-cep"/>
+                        <segue destination="Ydr-Su-iC0" kind="presentation" modalPresentationStyle="formSheet" id="skE-zx-UYP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3384" y="-782"/>
+            <point key="canvasLocation" x="3097" y="-808"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="2KU-Nh-n7e">
@@ -1026,7 +1027,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOBILE NUMBER" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INo-Ah-ZEm">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CELL NUMBER" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INo-Ah-ZEm">
                                                 <rect key="frame" x="8" y="142" width="352" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="otj-Ve-Ic4"/>
@@ -6525,6 +6526,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EKu-lv-8XA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="4378" y="-878"/>
         </scene>
         <!--Create Activity View Controller-->
         <scene sceneID="JOl-he-ruB">
@@ -7036,7 +7038,7 @@
                                                                         <constraint firstAttribute="height" constant="23" id="Q9A-6g-m5n"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CUSTOMER MOBILE NO :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8I-mD-W2x">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CUSTOMER CELL NO :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8I-mD-W2x">
                                                                     <rect key="frame" x="330" y="14" width="212" height="21"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="212" id="J98-QI-KnN"/>
@@ -7412,7 +7414,7 @@
                                             <constraint firstAttribute="height" constant="20" id="AG6-bU-fAE"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CUSTOMER MOBILE NO :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WW8-Nf-AJo">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CUSTOMER CELL NO :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WW8-Nf-AJo">
                                         <rect key="frame" x="316" y="40" width="196" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="UYU-HC-RfT"/>
@@ -8331,7 +8333,7 @@
                                 <color key="textColor" red="0.074509803920000006" green="0.098039215690000001" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="*Phone Number  :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xap-sq-cHu">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="*Cell Number  :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xap-sq-cHu">
                                 <rect key="frame" x="11" y="174" width="198" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.074509803920000006" green="0.098039215690000001" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
@@ -12912,8 +12914,8 @@
         <image name="update_btn-1.png" width="177" height="71"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rbv-Mz-7nF"/>
         <segue reference="zAB-PB-GKD"/>
+        <segue reference="g7n-P8-BKq"/>
         <segue reference="Pg2-Z2-nma"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

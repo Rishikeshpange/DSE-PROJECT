@@ -43,6 +43,12 @@
 @property (weak, nonatomic) IBOutlet UIView *middleView;
 @property(strong,nonatomic) NSMutableArray *Opty_Arr;
 
+@property (strong, nonatomic) IBOutlet UIView *cautionView;
+
+
+- (IBAction)btnToggleClick:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *btnToggle;
+
 
 
 
