@@ -357,7 +357,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y90-rR-TBf">
                                 <rect key="frame" x="706" y="296" width="126" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Remember Me">
+                                <state key="normal" title="Remember Me ?">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -968,11 +968,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWM-TZ-ZVa">
-                                <rect key="frame" x="3" y="97" width="348" height="2"/>
+                                <rect key="frame" x="3" y="97" width="408" height="2"/>
                                 <color key="backgroundColor" red="0.69803921570000005" green="0.71764705880000002" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="3O5-GX-1LY"/>
-                                    <constraint firstAttribute="width" constant="348" id="UE7-TG-3CD"/>
+                                    <constraint firstAttribute="width" constant="408" id="UE7-TG-3CD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1071,10 +1071,16 @@
                                                 <color key="backgroundColor" red="0.64705882349999999" green="0.69411764710000001" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="8bi-p5-4me"/>
+                                                    <constraint firstAttribute="width" constant="325" id="yeI-d1-Dys"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="yeI-d1-Dys"/>
+                                                    </mask>
+                                                </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ADDRESS LINE 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHz-Ln-eYb">
                                                 <rect key="frame" x="7" y="309" width="106" height="15"/>
@@ -11220,12 +11226,24 @@
                                         <color key="textColor" red="0.41960784309999999" green="0.41960784309999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kD-Zj-7dd">
+                                        <rect key="frame" x="466" y="48" width="42" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="42" id="KNK-Jg-N5y"/>
+                                            <constraint firstAttribute="height" constant="29" id="m3s-ne-1n1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="7kD-Zj-7dd" secondAttribute="trailing" constant="55" id="1y9-gp-8mb"/>
                                     <constraint firstAttribute="height" constant="125" id="5Nj-06-KeU"/>
                                     <constraint firstItem="VWu-Jr-dZP" firstAttribute="top" secondItem="74t-di-PrV" secondAttribute="topMargin" constant="23" id="A2Z-fj-q5I"/>
                                     <constraint firstAttribute="height" constant="125" id="E03-NV-wiL"/>
+                                    <constraint firstItem="7kD-Zj-7dd" firstAttribute="top" secondItem="74t-di-PrV" secondAttribute="top" constant="48" id="LUS-L4-JbS"/>
                                     <constraint firstItem="6ef-gP-N3D" firstAttribute="leading" secondItem="VWu-Jr-dZP" secondAttribute="leading" id="QlA-XU-KRg"/>
                                     <constraint firstItem="6ef-gP-N3D" firstAttribute="top" secondItem="VWu-Jr-dZP" secondAttribute="bottom" constant="25" id="d6d-YC-7ZX"/>
                                     <constraint firstItem="18d-Ue-7gl" firstAttribute="top" secondItem="VWu-Jr-dZP" secondAttribute="top" id="ixz-b5-b6R"/>
@@ -11272,6 +11290,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
                     <connections>
+                        <outlet property="ActivityCounterLbl" destination="7kD-Zj-7dd" id="y7d-cN-KxS"/>
                         <outlet property="activityInfo" destination="74t-di-PrV" id="Gvq-3K-310"/>
                         <outlet property="customerName" destination="18d-Ue-7gl" id="RAI-Pg-v8u"/>
                         <outlet property="customerNumber" destination="Fjq-vd-wNr" id="aWu-TA-73L"/>
@@ -11280,7 +11299,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLJ-Ta-yLB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4360.5" y="4861"/>
+            <point key="canvasLocation" x="4360" y="4861"/>
         </scene>
         <!--Create Activity View Controller-->
         <scene sceneID="yAg-AN-9mM">

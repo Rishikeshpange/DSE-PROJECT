@@ -42,6 +42,7 @@
 @property (strong, nonatomic) IBOutlet NSString *ACTIVITY_ID;
 
 
+@property (weak, nonatomic) IBOutlet UILabel *ActivityCounterLbl;
 
 
 

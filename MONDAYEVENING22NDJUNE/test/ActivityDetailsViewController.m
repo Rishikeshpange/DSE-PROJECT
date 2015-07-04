@@ -508,17 +508,19 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if ([appdelegate.fromOPTYDetail isEqualToString:@"CameFromOptyDetail"])
     {
-   
+        self.ActivityCounterLbl.text=[NSString stringWithFormat:@"%d",[pendingActivities_ListArr count]];
         return [pendingActivities_ListArr count];
     }
     else if ([appdelegate.fromACTIVITYDetail isEqualToString:@"cameFromActivitySearchList"])
     {
+        self.ActivityCounterLbl.text=[NSString stringWithFormat:@"%d",[pendingActivities_ListArr count]];
     // return [appdelegate.ActivityList count];
        return [pendingActivities_ListArr count];
       //  return 1;
     }//count number of row from counting array hear cataGorry is An Array
     else if ([appdelegate.fromManageOptyDetail isEqualToString:@"CameFromManageOptyToDetail"])
     {
+        self.ActivityCounterLbl.text=[NSString stringWithFormat:@"%d",[pendingActivities_ListArr count]];
         // return [appdelegate.ActivityList count];
         return [pendingActivities_ListArr count];
     }

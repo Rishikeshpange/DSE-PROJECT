@@ -125,7 +125,7 @@ NSArray *searchResults;
     [cell.ContactImage.layer setBorderColor: [UIColor colorWithRed:115/255.0 green:182/255.0 blue:68/255.0 alpha:1].CGColor];
     [cell.ContactImage.layer setBorderWidth: 2.0];
     
-    cell.ContactImage.image=[UIImage imageNamed:@"28.jpg"];
+    cell.ContactImage.image=[UIImage imageNamed:@"Contact2.png"];
        return cell;
     
 }
