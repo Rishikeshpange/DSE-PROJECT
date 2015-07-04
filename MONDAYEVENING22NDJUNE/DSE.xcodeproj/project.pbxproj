@@ -164,6 +164,7 @@
 		D9DF7CB91ADFEA16004BCA4F /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DF7CB41ADFEA16004BCA4F /* MBProgressHUD.m */; };
 		D9DF7CBA1ADFEA16004BCA4F /* UserDetails_Var.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DF7CB61ADFEA16004BCA4F /* UserDetails_Var.m */; };
 		D9DF7CBD1ADFF4C9004BCA4F /* RequestDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DF7CBC1ADFF4C9004BCA4F /* RequestDelegate.m */; };
+		D9E0D05C1B468FAF006F04D8 /* OptyDashBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E0D05B1B468FAF006F04D8 /* OptyDashBoardViewController.m */; };
 		D9E10AC71AFCA08300B579E3 /* CreateQuoteViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E10AC61AFCA08300B579E3 /* CreateQuoteViewViewController.m */; };
 		D9E1D0121B3047AA003ECB5E /* icon_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D9E1D0111B3047AA003ECB5E /* icon_1.png */; };
 		D9E1D01C1B304AA0003ECB5E /* icon_5new.png in Resources */ = {isa = PBXBuildFile; fileRef = D9E1D0191B304AA0003ECB5E /* icon_5new.png */; };
@@ -412,6 +413,8 @@
 		D9DF7CB71ADFEA16004BCA4F /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		D9DF7CBB1ADFF4C9004BCA4F /* RequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestDelegate.h; sourceTree = "<group>"; };
 		D9DF7CBC1ADFF4C9004BCA4F /* RequestDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestDelegate.m; sourceTree = "<group>"; };
+		D9E0D05A1B468FAF006F04D8 /* OptyDashBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptyDashBoardViewController.h; sourceTree = "<group>"; };
+		D9E0D05B1B468FAF006F04D8 /* OptyDashBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptyDashBoardViewController.m; sourceTree = "<group>"; };
 		D9E10AC51AFCA08300B579E3 /* CreateQuoteViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateQuoteViewViewController.h; sourceTree = "<group>"; };
 		D9E10AC61AFCA08300B579E3 /* CreateQuoteViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateQuoteViewViewController.m; sourceTree = "<group>"; };
 		D9E1D0111B3047AA003ECB5E /* icon_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_1.png; sourceTree = "<group>"; };
@@ -545,6 +548,8 @@
 				15B29A5016E8E01900772375 /* MasterViewController.m */,
 				15B29A5216E8E01900772375 /* DetailViewController.h */,
 				15B29A5316E8E01900772375 /* DetailViewController.m */,
+				D9E0D05A1B468FAF006F04D8 /* OptyDashBoardViewController.h */,
+				D9E0D05B1B468FAF006F04D8 /* OptyDashBoardViewController.m */,
 				D9E4C9691B0B1DB100EC9EDF /* dashBoardActivity.h */,
 				D9E4C96A1B0B1DB100EC9EDF /* dashBoardActivity.m */,
 				D9E4C96B1B0B1DB100EC9EDF /* dashBoardActivity_Cell.h */,
@@ -1061,6 +1066,7 @@
 				D9CA505B1AFF43C100846C53 /* CXBlurView.m in Sources */,
 				D9D282601ACD4978008C3AD5 /* ReportTableViewController.m in Sources */,
 				D9CF9C531AED1C3F000DCE02 /* LostOptyViewController.m in Sources */,
+				D9E0D05C1B468FAF006F04D8 /* OptyDashBoardViewController.m in Sources */,
 				D9E3FB911B2072620080CFCB /* RSLoadingIndicator.m in Sources */,
 				D9CF9C571AED1C3F000DCE02 /* manageOpportunity_Cell.m in Sources */,
 				D9CF9C541AED1C3F000DCE02 /* OpportunityDetailsViewController.m in Sources */,

@@ -18,7 +18,7 @@
     GlobalVariables *globalVariables_;
     UserDetails_Var *userDetailsVal_;
     
-     NSMutableArray *userDetailsArray;
+    NSMutableArray *userDetailsArray;
 }
 
 
@@ -31,7 +31,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *password;
 @property (strong, nonatomic) IBOutlet UIButton *LoginButton;
 
-@property (weak, nonatomic) IBOutlet UIButton *Btnremeberme;
+@property (weak, nonatomic) IBOutlet UIImageView *Btnremeberme;
 
 @property(strong,nonatomic) IBOutlet NSMutableData *webData;
 

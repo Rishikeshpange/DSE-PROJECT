@@ -19,8 +19,8 @@
 @interface LoginViewController ()
 {
     NSString *userName,*passWord;
-      NSArray *logingetUD;
-      int *imageflag;
+    NSArray *logingetUD;
+    int *imageflag;
 }
 @end
 
@@ -43,10 +43,10 @@
     imageflag=0;
     appdelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     
-     [self.Btnremeberme setImage: [UIImage imageNamed:@"uncheck.png"] forState:UIControlStateNormal];
-   
-//    self.username.text=@"JJOSHI1001680";
-//    self.password.text=@"TATA2015";
+    //     [self.Btnremeberme setImage: [UIImage imageNamed:@"uncheck.png"] forState:UIControlStateNormal];
+    
+    //    self.username.text=@"JJOSHI1001680";
+    //    self.password.text=@"TATA2015";
     
     [self.username setBackgroundColor:[UIColor clearColor]];
     [self.username.layer setBorderColor:[UIColor whiteColor].CGColor];
@@ -91,7 +91,7 @@
     NSString *password = [SSKeychain passwordForService:@"AnyService" account:@"AnyUser"];
     NSString *usernamme = [SSKeychain passwordForService:@"AnyService" account:@"AnyUser1"];
     
-      NSLog(@"username & Password Save:%@ %@",usernamme,password);
+    NSLog(@"username & Password Save:%@ %@",usernamme,password);
     
     self.username.text=usernamme;
     self.password.text=password;
@@ -100,18 +100,18 @@
     if(!usernamme)
     {
         
-        [self.Btnremeberme setBackgroundImage:[UIImage imageNamed:@"uncheck.png"] forState:UIControlStateNormal];
+        self.Btnremeberme.image=[UIImage imageNamed:@"uncheck.png"];
         
     }
     else{
         
-         [self.Btnremeberme setBackgroundImage:[UIImage imageNamed:@"checked.png"] forState:UIControlStateNormal];
-       // self.Btnremeberme.image=[UIImage imageNamed:@"checked.png"];
+        self.Btnremeberme.image=[UIImage imageNamed:@"checked.png"];
+        // self.Btnremeberme.image=[UIImage imageNamed:@"checked.png"];
         imageflag=1;
     }
-   // [self callArtifactRequest];
-
-  // Do any additional setup after loading the view.
+    // [self callArtifactRequest];
+    
+    // Do any additional setup after loading the view.
     // Do any additional setup after loading the view.
 }
 
@@ -157,19 +157,19 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 - (IBAction)loginScreeb:(id)sender {
     
     
-     [self showAlert];
+    [self showAlert];
     if(self.username.text.length==0 || self.password.text.length==0)
     {
         [self hideAlert];
@@ -191,57 +191,57 @@
             
         }
         
-
+        
         [self callArtifactRequest];
         
-        userName=self.username.text;
-        passWord=self.password.text;
-        NSLog(@"Username : - %@",self.username.text);
-        NSLog(@"Password : - %@",self.password.text);
+        //        userName=self.username.text;
+        //        passWord=self.password.text;
+        //        NSLog(@"Username : - %@",self.username.text);
+        //        NSLog(@"Password : - %@",self.password.text);
     }
-
+    
     
     /*
-//    AppDelegate* app_delegate=[[UIApplication sharedApplication] delegate];
-////    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-////    UISplitViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"SplitView"];
-//    //self.window = [[UIApplication sharedApplication] keyWindow];
-//    app_delegate.window.rootViewController= vc;
-    
-   
-    userName=self.username.text;
-    passWord=self.password.text;
-    NSLog(@"Username : - %@",userName);
-    NSLog(@"Password : - %@",passWord);
-    
-//    AppDelegate* app_delegate=[[UIApplication sharedApplication] delegate];
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-//    UISplitViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"SplitView"];
-//    //self.window = [[UIApplication sharedApplication] keyWindow];
-//    app_delegate.window.rootViewController= vc;
-
-    
-   if(appdelegate.artifact.length > 0)
-    {
-        [self showAlert];
-        [self callDateRequest];
-        [self CallUserDetails];
-        [self callauthenticateOIDRequest];
-    }
-    else
-    {
-        NSLog(@"SamlArt Not found's.....");
-        
-        UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"Attention!" message:@"The internet connection seems to be offline!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [alertView show];
-        [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"] animated:NO];
-    }
-    */
+     //    AppDelegate* app_delegate=[[UIApplication sharedApplication] delegate];
+     ////    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+     ////    UISplitViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"SplitView"];
+     //    //self.window = [[UIApplication sharedApplication] keyWindow];
+     //    app_delegate.window.rootViewController= vc;
+     
+     
+     userName=self.username.text;
+     passWord=self.password.text;
+     NSLog(@"Username : - %@",userName);
+     NSLog(@"Password : - %@",passWord);
+     
+     //    AppDelegate* app_delegate=[[UIApplication sharedApplication] delegate];
+     //    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+     //    UISplitViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"SplitView"];
+     //    //self.window = [[UIApplication sharedApplication] keyWindow];
+     //    app_delegate.window.rootViewController= vc;
+     
+     
+     if(appdelegate.artifact.length > 0)
+     {
+     [self showAlert];
+     [self callDateRequest];
+     [self CallUserDetails];
+     [self callauthenticateOIDRequest];
+     }
+     else
+     {
+     NSLog(@"SamlArt Not found's.....");
+     
+     UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"Attention!" message:@"The internet connection seems to be offline!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+     [alertView show];
+     [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"] animated:NO];
+     }
+     */
     
     /*
      
      NSLog(@"PostData: %@",post);
-
+     
      NSURL *url=[NSURL URLWithString:@"http://192.168.1.104:82/WebServices/ValidateUser.svc/Validate"];
      
      NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
@@ -291,15 +291,15 @@
      
      NSLog(@" Json data is : %@",jsonData);
      }
-
+     
      */
-
+    
     /*
-   AppDelegate *ad = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    NSLog(@"Close");
-    ad.authenticated = YES;
-    [self dismissViewControllerAnimated:NO completion:nil];
-    */
+     AppDelegate *ad = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+     NSLog(@"Close");
+     ad.authenticated = YES;
+     [self dismissViewControllerAnimated:NO completion:nil];
+     */
     //AppDelegate* app_delegate=[[UIApplication sharedApplication] delegate];
     //    //self.window = [[UIApplication sharedApplication] keyWindow];
     //   // app_delegate.window.rootViewController= app_delegate.splitViewController;
@@ -307,26 +307,28 @@
     //
     //    AppDelegate* app_delegate=[[UIApplication sharedApplication] delegate];
     
-  //  UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-  //  UISplitViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"SplitView"];
+    //  UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    //  UISplitViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"SplitView"];
     //self.window = [[UIApplication sharedApplication] keyWindow];
-  //  app_delegate.window.rootViewController= vc;
-
+    //  app_delegate.window.rootViewController= vc;
     
-
-   // [self dismissViewControllerAnimated:NO completion:nil];
+    
+    
+    // [self dismissViewControllerAnimated:NO completion:nil];
 }
 - (IBAction)btnRemember:(id)sender {
     
     if(imageflag==0)
     {
         
-        [self.Btnremeberme setImage: [UIImage imageNamed:@"checked.png"] forState:UIControlStateNormal];
+        self.Btnremeberme.image=[UIImage imageNamed:@"checked.png"];
         
         
-        [SSKeychain setPassword:self.password.text forService:@"AnyService" account:@"AnyUser"];
-        [SSKeychain setPassword:self.username.text forService:@"AnyService" account:@"AnyUser1"];
         
+        
+        //        [SSKeychain setPassword:self.password.text forService:@"AnyService" account:@"AnyUser"];
+        //        [SSKeychain setPassword:self.username.text forService:@"AnyService" account:@"AnyUser1"];
+        //
         
         NSLog(@"Remember mi ");
         imageflag=1;
@@ -334,8 +336,7 @@
     else{
         
         
-        [self.Btnremeberme setImage: [UIImage imageNamed:@"uncheck.png"] forState:UIControlStateNormal];
-        imageflag=0;
+        self.Btnremeberme.image=[UIImage imageNamed:@"uncheck.png"];        imageflag=0;
         
         
         
@@ -359,35 +360,35 @@
 
 -(void)callArtifactRequest
 {
-//    JJOSHI1001680
-//    NANO2014
+    //    JJOSHI1001680
+    //    NANO2014
     
     // NSString *loginServices1 = @"{\"objBasicDetails\":{\"UserName\":\"YMANGAT3000380\",\"USER_PASS\":\"NANO2015\"}}";
-//    NSString *envelopeText = @"<SOAP:Envelope xmlns:SOAP=\"http://schemas.xmlsoap.org/soap/envelope/\"><SOAP:Body><GetWebAuthByKey xmlns=\"http://schemas.cordys.com/com.cordys.tatamotors.tmwebauthwsapps\" preserveSpace=\"no\" qAccess=\"0\" qValues=\"\"><key>mob123</key></GetWebAuthByKey></SOAP:Body></SOAP:Envelope>";
-      NSString *envelopeText = @"<SOAP:Envelope xmlns:SOAP=\"http://schemas.xmlsoap.org/soap/envelope/\"><SOAP:Body><GetWebAuthByKey xmlns=\"http://schemas.cordys.com/com.cordys.tatamotors.tmwebauthwsapps\" preserveSpace=\"no\" qAccess=\"0\" qValues=\"\"><key>NeevMobOne</key></GetWebAuthByKey></SOAP:Body></SOAP:Envelope>";
+    //    NSString *envelopeText = @"<SOAP:Envelope xmlns:SOAP=\"http://schemas.xmlsoap.org/soap/envelope/\"><SOAP:Body><GetWebAuthByKey xmlns=\"http://schemas.cordys.com/com.cordys.tatamotors.tmwebauthwsapps\" preserveSpace=\"no\" qAccess=\"0\" qValues=\"\"><key>mob123</key></GetWebAuthByKey></SOAP:Body></SOAP:Envelope>";
+    NSString *envelopeText = @"<SOAP:Envelope xmlns:SOAP=\"http://schemas.xmlsoap.org/soap/envelope/\"><SOAP:Body><GetWebAuthByKey xmlns=\"http://schemas.cordys.com/com.cordys.tatamotors.tmwebauthwsapps\" preserveSpace=\"no\" qAccess=\"0\" qValues=\"\"><key>NeevMobOne</key></GetWebAuthByKey></SOAP:Body></SOAP:Envelope>";
     //use for SAMSONJ1001680 dse project for usrname and TML2015 For pwd
     NSString * envelopeText1 = [NSString stringWithFormat:@"<SOAP:Envelope xmlns:SOAP=\"http://schemas.xmlsoap.org/soap/envelope/\">"
-    @"<SOAP:Header>"
-    @"<wsse:Security xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\">"
-    @"<wsse:UsernameToken xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\">"
-    @"<wsse:Username>%@</wsse:Username>"
-    @"<wsse:Password>%@</wsse:Password>"
-    @"</wsse:UsernameToken>"
-    @"</wsse:Security>"
-    @"<header xmlns=\"http://schemas.cordys.com/General/1.0/\">"
-    @"<Logger xmlns=\"http://schemas.cordys.com/General/1.0/\"/>"
-    @"</header>"
-    @"</SOAP:Header>"
-    @"<SOAP:Body>"
-    @"<samlp:Request xmlns:samlp=\"urn:oasis:names:tc:SAML:1.0:protocol\" MajorVersion=\"1\" MinorVersion=\"1\" IssueInstant=\"2010-05-03T06:53:51Z\" RequestID=\"aa23159489-0126-1853-28ca-d7024556c36\">"
-    @"<samlp:AuthenticationQuery>"
-    @"<saml:Subject xmlns:saml=\"urn:oasis:names:tc:SAML:1.0:assertion\">"
-    @"<saml:NameIdentifier Format=\"urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified\">%@</saml:NameIdentifier>"
-    @"</saml:Subject>"
-    @"</samlp:AuthenticationQuery>"
-    @"</samlp:Request>"
-    @"</SOAP:Body>"
-    @"</SOAP:Envelope>",self.username.text,self.password.text,self.username.text];
+                                @"<SOAP:Header>"
+                                @"<wsse:Security xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\">"
+                                @"<wsse:UsernameToken xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\">"
+                                @"<wsse:Username>%@</wsse:Username>"
+                                @"<wsse:Password>%@</wsse:Password>"
+                                @"</wsse:UsernameToken>"
+                                @"</wsse:Security>"
+                                @"<header xmlns=\"http://schemas.cordys.com/General/1.0/\">"
+                                @"<Logger xmlns=\"http://schemas.cordys.com/General/1.0/\"/>"
+                                @"</header>"
+                                @"</SOAP:Header>"
+                                @"<SOAP:Body>"
+                                @"<samlp:Request xmlns:samlp=\"urn:oasis:names:tc:SAML:1.0:protocol\" MajorVersion=\"1\" MinorVersion=\"1\" IssueInstant=\"2010-05-03T06:53:51Z\" RequestID=\"aa23159489-0126-1853-28ca-d7024556c36\">"
+                                @"<samlp:AuthenticationQuery>"
+                                @"<saml:Subject xmlns:saml=\"urn:oasis:names:tc:SAML:1.0:assertion\">"
+                                @"<saml:NameIdentifier Format=\"urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified\">%@</saml:NameIdentifier>"
+                                @"</saml:Subject>"
+                                @"</samlp:AuthenticationQuery>"
+                                @"</samlp:Request>"
+                                @"</SOAP:Body>"
+                                @"</SOAP:Envelope>",self.username.text,self.password.text,self.username.text];
     
     /*
      NSString * envelopeText = [NSString stringWithFormat:
@@ -417,8 +418,8 @@
     
     NSData *envelope = [envelopeText1 dataUsingEncoding:NSUTF8StringEncoding];
     //    <string name="URL">https://tmcrmappsqa.inservices.tatamotors.com/cordys/com.eibus.web.soap.Gateway.wcp?organization=o=MobileApps,cn=cordys,cn=cbop,o=tatamotors.com</string>
-  //  NSURL * theurl = [NSURL URLWithString:@"http://tmcrmapps.inservices.tatamotors.com/cordys/com.eibus.web.soap.Gateway.wcp?organization=o=MobileApps,cn=cordys,cn=cbop,o=tatamotors.com"];
-      NSURL * theurl = [NSURL URLWithString:@"http://tmcrmappsqa.inservices.tatamotors.com/cordys/com.eibus.web.soap.Gateway.wcp?organization=o=MobileApps,cn=cordys,cn=cbop,o=tatamotors.com"];
+    //  NSURL * theurl = [NSURL URLWithString:@"http://tmcrmapps.inservices.tatamotors.com/cordys/com.eibus.web.soap.Gateway.wcp?organization=o=MobileApps,cn=cordys,cn=cbop,o=tatamotors.com"];
+    NSURL * theurl = [NSURL URLWithString:@"http://tmcrmappsqa.inservices.tatamotors.com/cordys/com.eibus.web.soap.Gateway.wcp?organization=o=MobileApps,cn=cordys,cn=cbop,o=tatamotors.com"];
     
     //NSURL * theurl = [NSURL URLWithString:@"http://tmcrmappsqa.inservices.tatamotors.com/cordys/com.eibus.web.soap.Gateway.wcp?organization=o=MobileApps,cn=cordys,cn=cbop,o=tatamotors.com"];
     NSLog(@"URL IS %@",theurl);
@@ -448,17 +449,17 @@
 //-(BOOL)shouldAutorotate
 //{
 //    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
-//    
+//
 //    if (orientation==UIInterfaceOrientationLandscapeLeft || orientation==UIInterfaceOrientationLandscapeRight)
 //        return YES;
-//    
+//
 //     return NO;
 ////    if (orientation != UIInterfaceOrientationLandscapeLeft)
 ////    {
 ////        NSLog(@"UIInterfaceOrientationLandscapeLeft");
-////    
+////
 ////    }
-//    
+//
 //  //  return YES;
 //}
 
@@ -470,14 +471,14 @@
 
 - (NSUInteger)supportedInterfaceOrientations
 {
-     return UIInterfaceOrientationMaskLandscapeLeft + UIInterfaceOrientationMaskLandscapeRight;
+    return UIInterfaceOrientationMaskLandscapeLeft + UIInterfaceOrientationMaskLandscapeRight;
 }
 
 //- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 //{
 //    if ( interfaceOrientation==UIInterfaceOrientationLandscapeRight)
 //        return YES;
-//    
+//
 //    return NO;
 //}
 
@@ -496,30 +497,30 @@
     }
     else{
         @try {
-//            TBXML *tbxml = [TBXML newTBXMLWithXMLString:response error:&err];
-//            TBXMLElement *body = [TBXML childElementNamed:@"SOAP:Body" parentElement:tbxml.rootXMLElement];
-//            TBXMLElement *keyResponse = [TBXML childElementNamed:@"GetWebAuthByKeyResponse" parentElement:body];
-//            TBXMLElement *envelope = [TBXML childElementNamed:@"SOAP:Envelope" parentElement:keyResponse];
-//            TBXMLElement *innerBody = [TBXML childElementNamed:@"SOAP:Body" parentElement:envelope];
-//            TBXMLElement *samlResponse = [TBXML childElementNamed:@"samlp:Response" parentElement:innerBody];
+            //            TBXML *tbxml = [TBXML newTBXMLWithXMLString:response error:&err];
+            //            TBXMLElement *body = [TBXML childElementNamed:@"SOAP:Body" parentElement:tbxml.rootXMLElement];
+            //            TBXMLElement *keyResponse = [TBXML childElementNamed:@"GetWebAuthByKeyResponse" parentElement:body];
+            //            TBXMLElement *envelope = [TBXML childElementNamed:@"SOAP:Envelope" parentElement:keyResponse];
+            //            TBXMLElement *innerBody = [TBXML childElementNamed:@"SOAP:Body" parentElement:envelope];
+            //            TBXMLElement *samlResponse = [TBXML childElementNamed:@"samlp:Response" parentElement:innerBody];
             TBXML *tbxml = [TBXML newTBXMLWithXMLString:response error:&err];
-                TBXMLElement *body = [TBXML childElementNamed:@"SOAP:Body" parentElement:tbxml.rootXMLElement];
+            TBXMLElement *body = [TBXML childElementNamed:@"SOAP:Body" parentElement:tbxml.rootXMLElement];
             TBXMLElement *keyResponse = [TBXML childElementNamed:@"samlp:Response" parentElement:body];
             
-           
+            
             if(keyResponse)
             {
-               // TBXMLElement *art = [TBXML childElementNamed:@"samlp:AssertionArtifact" parentElement:samlResponse];
-                 TBXMLElement *AssertionArtifact = [TBXML childElementNamed:@"samlp:AssertionArtifact" parentElement:keyResponse];
+                // TBXMLElement *art = [TBXML childElementNamed:@"samlp:AssertionArtifact" parentElement:samlResponse];
+                TBXMLElement *AssertionArtifact = [TBXML childElementNamed:@"samlp:AssertionArtifact" parentElement:keyResponse];
                 appdelegate.artifact = [TBXML textForElement:AssertionArtifact];
                 NSLog(@"Samlp Art: %@",appdelegate.artifact);
                 // NSLog(@"%@",appdelegate.artifact);
-                   globalVariables_.g_Artifact = appdelegate.artifact;
-                   [GlobalVariablesArray_ addObject:globalVariables_.g_Artifact];
+                globalVariables_.g_Artifact = appdelegate.artifact;
+                [GlobalVariablesArray_ addObject:globalVariables_.g_Artifact];
                 [appdelegate hideAlert];
-                 [self callauthenticateOIDRequest];
-//                [self callDateRequest];
-//                [self CallUserDetails];
+                [self callauthenticateOIDRequest];
+                //                [self callDateRequest];
+                //                [self CallUserDetails];
             }
             else
             {
@@ -527,9 +528,9 @@
                 UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Attention!" message:@"Error in connecting to server. Please try later!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                 [alertView show];
                 
-//
+                //
             }
-//            
+            //
         }
         @catch (NSException *exception)
         {
@@ -537,7 +538,7 @@
             UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Attention!" message:@"Error in connecting to server. Please try later!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alertView show];
         }
-//        
+        //
     }
     
 }
@@ -607,11 +608,11 @@
 -(void)callauthenticateOIDRequest
 {
     NSLog(@"inside ...CallAunthrnticate");
-//    JJOSHI1001680
-//    NANO2014
-   
+    //    JJOSHI1001680
+    //    NANO2014
+    
     //previous dese login usrname SAMSONJ1001680
-   //pwd NANO2014
+    //pwd NANO2014
     
     NSString *envelopeText=[NSString stringWithFormat:@"<SOAP:Envelope xmlns:SOAP=\"http://schemas.xmlsoap.org/soap/envelope/\">"
                             @"<SOAP:Body>"
@@ -625,8 +626,8 @@
     NSData *envelope = [envelopeText dataUsingEncoding:NSUTF8StringEncoding];
     NSLog(@"Envelop..%@",envelope);
     
-   NSURL * theurl = [NSURL URLWithString:[NSString stringWithFormat:@"%@&SAMLart=%@",appdelegate.URL,appdelegate.artifact]];
- 
+    NSURL * theurl = [NSURL URLWithString:[NSString stringWithFormat:@"%@&SAMLart=%@",appdelegate.URL,appdelegate.artifact]];
+    
     NSLog(@"URL..%@",theurl);
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:theurl];
     
@@ -692,7 +693,7 @@
                                @"</GetPositionDetailsFromLogin>"
                                @"</SOAP:Body>"
                                @"</SOAP:Envelope>",@"JJOSHI1001680"];
-
+    
     
     NSData *envelope = [envelopeText dataUsingEncoding:NSUTF8StringEncoding];
     
@@ -747,7 +748,7 @@
             
             NSLog(@"Elents...on   %@",[logingetUD objectAtIndex:[logingetUD count]-1]);
             
-         //   appdelegate.loginUD=[logingetUD objectAtIndex:[logingetUD count]-3];
+            //   appdelegate.loginUD=[logingetUD objectAtIndex:[logingetUD count]-3];
             
             
             
@@ -795,8 +796,8 @@
             // [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"tabBarController"] animated:YES];
             
             //userDetailsVal_.Login_Name = self.username.text;
-//            JJOSHI1001680
-//            NANO2014
+            //            JJOSHI1001680
+            //            NANO2014
             
             userDetailsVal_.Login_Name = @"JJOSHI1001680";// use this for dse SAMSONJ1001680
             NSLog(@"\n _ORGNAME %@",userDetailsVal_.Login_Name);//JUST TEST
@@ -1033,12 +1034,12 @@
 -(void)showAlert
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    }
+}
 -(void)hideAlert
 {
     //NSLog(@"Hide...Alert..");
     [MBProgressHUD hideHUDForView:self.view animated:YES];
- 
+    
 }
 
 
