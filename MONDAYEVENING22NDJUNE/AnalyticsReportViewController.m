@@ -109,7 +109,7 @@
 
 -(void)info_btn
 {
-    //  NSLog(@"Home biscuit from Sanfrancisco");
+    [self performSegueWithIdentifier:@"infoView" sender:self];
 }
 -(void)logOut_btn
 {

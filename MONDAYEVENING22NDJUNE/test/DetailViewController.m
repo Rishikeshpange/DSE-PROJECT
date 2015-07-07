@@ -283,7 +283,7 @@ bool isShown = false;
 //    [UIView animateWithDuration:0.25 animations:^{
 //        _cautionView.frame =  CGRectMake(130, 30, 0, 0);
 //    }];
-
+    [self performSegueWithIdentifier:@"infoView" sender:self];
 }
 -(void)logOut_btn
 {

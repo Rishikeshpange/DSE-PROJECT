@@ -189,6 +189,7 @@
 		D9E4DEBD1B4407C200E2F5A7 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E4DEBB1B4407C200E2F5A7 /* SSKeychainQuery.m */; };
 		D9E4DEC01B44095000E2F5A7 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = D9E4DEBE1B44095000E2F5A7 /* checked.png */; };
 		D9E4DEC11B44095000E2F5A7 /* uncheck.png in Resources */ = {isa = PBXBuildFile; fileRef = D9E4DEBF1B44095000E2F5A7 /* uncheck.png */; };
+		D9E814141B4BD2BF007C5A32 /* INFOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E814131B4BD2BF007C5A32 /* INFOViewController.m */; };
 		D9EA48371AEE3D86005387B4 /* SearchActivityList.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EA48361AEE3D86005387B4 /* SearchActivityList.m */; };
 		D9EC1DD81B17480E0025BE36 /* ETActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EC1DD51B17480E0025BE36 /* ETActivityIndicatorView.m */; };
 		D9EC1DD91B17480E0025BE36 /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EC1DD71B17480E0025BE36 /* Circle.m */; };
@@ -449,6 +450,8 @@
 		D9E4DEBB1B4407C200E2F5A7 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
 		D9E4DEBE1B44095000E2F5A7 /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
 		D9E4DEBF1B44095000E2F5A7 /* uncheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uncheck.png; sourceTree = "<group>"; };
+		D9E814121B4BD2BF007C5A32 /* INFOViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INFOViewController.h; sourceTree = "<group>"; };
+		D9E814131B4BD2BF007C5A32 /* INFOViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INFOViewController.m; sourceTree = "<group>"; };
 		D9EA48351AEE3D86005387B4 /* SearchActivityList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchActivityList.h; path = ../SearchActivityList.h; sourceTree = "<group>"; };
 		D9EA48361AEE3D86005387B4 /* SearchActivityList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchActivityList.m; path = ../SearchActivityList.m; sourceTree = "<group>"; };
 		D9EC1DD41B17480E0025BE36 /* ETActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETActivityIndicatorView.h; sourceTree = "<group>"; };
@@ -487,6 +490,8 @@
 		15B29A2516E8E01900772375 = {
 			isa = PBXGroup;
 			children = (
+				D9E814121B4BD2BF007C5A32 /* INFOViewController.h */,
+				D9E814131B4BD2BF007C5A32 /* INFOViewController.m */,
 				D9E3FB8F1B2072620080CFCB /* RSLoadingIndicator.h */,
 				D9E3FB901B2072620080CFCB /* RSLoadingIndicator.m */,
 				D9EC1DDA1B174EA40025BE36 /* PendulumView.h */,
@@ -1080,6 +1085,7 @@
 				D9CF9C531AED1C3F000DCE02 /* LostOptyViewController.m in Sources */,
 				D9E0D05C1B468FAF006F04D8 /* OptyDashBoardViewController.m in Sources */,
 				D9E3FB911B2072620080CFCB /* RSLoadingIndicator.m in Sources */,
+				D9E814141B4BD2BF007C5A32 /* INFOViewController.m in Sources */,
 				D9CF9C571AED1C3F000DCE02 /* manageOpportunity_Cell.m in Sources */,
 				D9CF9C541AED1C3F000DCE02 /* OpportunityDetailsViewController.m in Sources */,
 				D9F2F3AF1AD6930000954668 /* ContactTableViewCell.m in Sources */,

@@ -3,7 +3,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -315,7 +314,7 @@
                         <outlet property="percentageLabel1" destination="NUN-DL-YwS" id="B11-kf-TY8"/>
                         <outlet property="pieChartRight" destination="JTQ-hN-5hF" id="LQs-GH-JoP"/>
                         <outlet property="tblview" destination="TOh-zd-K2V" id="rJB-Tn-cep"/>
-                        <segue destination="Ydr-Su-iC0" kind="presentation" modalPresentationStyle="formSheet" id="skE-zx-UYP"/>
+                        <segue destination="Ydr-Su-iC0" kind="presentation" identifier="infoView" modalPresentationStyle="formSheet" id="skE-zx-UYP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15" sceneMemberID="firstResponder"/>
@@ -1654,6 +1653,7 @@
                         <outlet property="textlast" destination="LDj-rr-Jui" id="BHG-Yv-HpM"/>
                         <outlet property="textnumber" destination="HRZ-q2-rhI" id="0Xp-su-R0P"/>
                         <outlet property="textpostalcode" destination="56l-Fj-HOp" id="DCY-Zv-iOT"/>
+                        <segue destination="Ydr-Su-iC0" kind="presentation" identifier="infoView" modalPresentationStyle="formSheet" id="GM2-gn-DV1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4lZ-iG-Fvj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4926,11 +4926,12 @@
                         <outlet property="coLegend" destination="CpM-Qg-fto" id="nWF-uY-n4L"/>
                         <outlet property="percentageLabel" destination="adn-yb-HyO" id="Zoh-Wz-d6u"/>
                         <outlet property="tblview" destination="rdu-6S-gq0" id="Vdv-js-0Cv"/>
+                        <segue destination="Ydr-Su-iC0" kind="presentation" identifier="infoView" modalPresentationStyle="fullScreen" id="Ssf-Go-cFl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0KK-b2-1s0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3026" y="3582"/>
+            <point key="canvasLocation" x="2950" y="3742"/>
         </scene>
         <!--Analytics Report View Controller-->
         <scene sceneID="8j6-Dx-0WQ">
@@ -5006,7 +5007,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="SELECT YEAR" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xLr-gr-3Yh">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="SELECT YEAR" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xLr-gr-3Yh">
                                         <rect key="frame" x="17" y="42" width="455" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="dFj-gg-IP7"/>
@@ -5060,7 +5061,7 @@
                                         <color key="textColor" red="0.21960784310000001" green="0.2156862745" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="SELECT MONTH" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mGt-Ja-SYT">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="SELECT MONTH" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mGt-Ja-SYT">
                                         <rect key="frame" x="8" y="42" width="455" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="zey-pD-hdE"/>
@@ -5078,7 +5079,7 @@
                                             <rect key="frame" x="8" y="99" width="156" height="17"/>
                                         </variation>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="SELECT REPORT TYPE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vXF-rh-uaR">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="SELECT REPORT TYPE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vXF-rh-uaR">
                                         <rect key="frame" x="8" y="130" width="455" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="2TD-MZ-N1g"/>
@@ -5185,11 +5186,12 @@
                         <outlet property="txtSelectDSE" destination="vXF-rh-uaR" id="8oD-3j-uMY"/>
                         <outlet property="txtTODate" destination="xLr-gr-3Yh" id="wmp-gG-LMC"/>
                         <segue destination="fv9-yN-36m" kind="show" identifier="searchPass" id="PBy-EF-EZW"/>
+                        <segue destination="Ydr-Su-iC0" kind="presentation" identifier="infoView" modalPresentationStyle="formSheet" id="8qI-It-59C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="82F-hm-qBb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1906" y="3246"/>
+            <point key="canvasLocation" x="1473" y="3680"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bxr-vs-CLu">
@@ -5207,7 +5209,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ojh-jl-tR0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2099" y="3785"/>
+            <point key="canvasLocation" x="2105" y="4329"/>
         </scene>
         <!--Update Opty View Controller-->
         <scene sceneID="8N1-2o-86e">
@@ -6503,7 +6505,7 @@
         <!--View Controller-->
         <scene sceneID="qQH-pb-yZe">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Ydr-Su-iC0" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Ydr-Su-iC0" customClass="INFOViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="74H-jW-76W"/>
                         <viewControllerLayoutGuide type="bottom" id="dYc-A4-1Gj"/>
@@ -6517,7 +6519,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EKu-lv-8XA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4378" y="-878"/>
+            <point key="canvasLocation" x="7368" y="-112"/>
         </scene>
         <!--Create Activity View Controller-->
         <scene sceneID="JOl-he-ruB">
@@ -7304,11 +7306,12 @@
                     <navigationItem key="navigationItem" id="o68-gu-wib"/>
                     <connections>
                         <outlet property="opportunoity_tv" destination="ukd-RO-YuR" id="BjL-hV-8fK"/>
+                        <segue destination="Ydr-Su-iC0" kind="presentation" identifier="infoView" modalPresentationStyle="formSheet" id="xO6-cs-sNh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u4d-Nu-ta4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4620" y="2872"/>
+            <point key="canvasLocation" x="4468" y="2680"/>
         </scene>
         <!--Opportunity Details View Controller-->
         <scene sceneID="v2N-cR-umX">
@@ -8230,6 +8233,7 @@
                         <segue destination="1XD-lZ-lEn" kind="presentation" identifier="UpdateOpty" modalPresentationStyle="formSheet" id="aDd-Qg-NnO"/>
                         <segue destination="1XD-lZ-lEn" kind="presentation" identifier="UpdateOppurtunity" modalPresentationStyle="formSheet" id="Pg2-Z2-nma"/>
                         <segue destination="bDT-pb-fgR" kind="show" identifier="ShowMarkAsLostOpty" id="zAB-PB-GKD"/>
+                        <segue destination="Ydr-Su-iC0" kind="presentation" identifier="infoView" modalPresentationStyle="formSheet" id="bbd-Vu-OiA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5DC-Hs-YP2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -8461,7 +8465,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ITF-F9-Mgl">
                                         <rect key="frame" x="1" y="3" width="276" height="77"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QlN-aG-H1V">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QlN-aG-H1V">
                                                 <rect key="frame" x="27" y="34" width="192" height="35"/>
                                                 <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -8548,7 +8552,7 @@
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VMh-jp-opg">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="SELECT TO DATE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ujI-Jo-APU">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="SELECT TO DATE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ujI-Jo-APU">
                                         <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="2BT-fs-ak7"/>
@@ -8567,7 +8571,7 @@
                                             </mask>
                                         </variation>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="SELECT PPL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CmG-p6-qgg">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="SELECT PPL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CmG-p6-qgg">
                                         <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="R01-FL-q7d"/>
@@ -8815,7 +8819,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9U-IL-Lme">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="SELECT FROM DATE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YTw-C4-VcH">
+                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="SELECT FROM DATE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YTw-C4-VcH">
                                         <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="b4i-YF-fIg"/>
@@ -8834,7 +8838,7 @@
                                             </mask>
                                         </variation>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="SELECT SALES STAGES " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fo8-9s-kRI">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="SELECT SALES STAGES " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fo8-9s-kRI">
                                         <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="cFW-Q1-3Qt"/>
@@ -9124,6 +9128,7 @@
                         <outlet property="txtToDate" destination="ujI-Jo-APU" id="3Rn-Fm-mVb"/>
                         <outlet property="viewFirst" destination="Z9U-IL-Lme" id="SeM-ll-EzJ"/>
                         <outlet property="viewSecond" destination="VMh-jp-opg" id="mju-Xq-nhk"/>
+                        <segue destination="Ydr-Su-iC0" kind="presentation" identifier="infoView" modalPresentationStyle="formSheet" id="Ryk-nI-mhi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HzQ-k0-a4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -9571,7 +9576,7 @@
                                         <color key="textColor" red="0.25490196078431371" green="0.26666666666666666" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="SELECT REASON LOST TO " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XqY-RP-85V">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="SELECT REASON LOST TO " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XqY-RP-85V">
                                         <rect key="frame" x="8" y="73" width="446" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="MWX-6k-lYk"/>
@@ -9588,7 +9593,7 @@
                                         <color key="textColor" red="0.25490196078431371" green="0.26666666666666666" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="SELECT MODE LOST TO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="enG-Eh-bkJ">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="SELECT MODE LOST TO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="enG-Eh-bkJ">
                                         <rect key="frame" x="8" y="171" width="446" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="n35-SJ-Mra"/>
@@ -9693,7 +9698,7 @@
                                         <color key="textColor" red="0.25490196078431371" green="0.26666666666666666" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="SELECT MAKE LOST TO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hp9-3v-h1W">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="SELECT MAKE LOST TO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hp9-3v-h1W">
                                         <rect key="frame" x="8" y="71" width="448" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="APJ-i9-H3C"/>
@@ -9784,11 +9789,12 @@
                         <outlet property="txtModeLost" destination="enG-Eh-bkJ" id="fTI-Uh-ncC"/>
                         <outlet property="txtReason" destination="XqY-RP-85V" id="I1b-Fw-Umh"/>
                         <outlet property="viewFirst" destination="CZw-Ln-HzQ" id="vJJ-KW-Lu7"/>
+                        <segue destination="Ydr-Su-iC0" kind="presentation" identifier="infoView" modalPresentationStyle="formSheet" id="Yzl-Tn-x44"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MOb-ry-dTu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6331" y="4090"/>
+            <point key="canvasLocation" x="6095" y="4426"/>
         </scene>
         <!--Opportunity Search Result View Controller-->
         <scene sceneID="YO0-10-jX5">
@@ -10161,11 +10167,12 @@
                     <navigationItem key="navigationItem" id="06e-oM-9q2"/>
                     <connections>
                         <outlet property="tableViewData" destination="NkR-aC-Sgl" id="bw8-f5-ZpI"/>
+                        <segue destination="Ydr-Su-iC0" kind="presentation" identifier="infoView" modalPresentationStyle="formSheet" id="muJ-7O-G0d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mfX-fS-1Dy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6291" y="2210"/>
+            <point key="canvasLocation" x="6171" y="1953"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FOS-kf-oeg">
@@ -10351,11 +10358,12 @@
                     <connections>
                         <outlet property="_ViewTableData" destination="b84-Dy-YyF" id="c34-lP-s3C"/>
                         <outlet property="tableView" destination="Aja-jY-ZSf" id="FEu-hQ-Zau"/>
+                        <segue destination="Ydr-Su-iC0" kind="presentation" identifier="infoView" modalPresentationStyle="formSheet" id="b5z-yJ-vHM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Hz-UJ-ZpV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3660" y="4864"/>
+            <point key="canvasLocation" x="3672" y="5118"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="u04-zc-ucQ">
@@ -10412,7 +10420,7 @@
                                         <color key="textColor" red="0.34901960784313724" green="0.34901960784313724" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="SELECT FROM DATE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KIQ-gr-haI">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="SELECT FROM DATE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KIQ-gr-haI">
                                         <rect key="frame" x="8" y="29" width="268" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="S00-7Y-Ll4"/>
@@ -10427,7 +10435,7 @@
                                         <color key="textColor" red="0.34901960784313724" green="0.34901960784313724" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="SELECT ACTIVITY TYPE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gBw-bn-Tfi">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="SELECT ACTIVITY TYPE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gBw-bn-Tfi">
                                         <rect key="frame" x="8" y="90" width="268" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="zHx-PK-20T"/>
@@ -10445,7 +10453,7 @@
                                         <color key="textColor" red="0.34901960784313724" green="0.34901960784313724" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="SELECT PPL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S87-aO-wri">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="SELECT PPL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S87-aO-wri">
                                         <rect key="frame" x="8" y="151" width="268" height="30"/>
                                         <color key="textColor" red="0.18823529410000001" green="0.22352941179999999" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -10574,7 +10582,7 @@
                                         <color key="textColor" red="0.34901960784313724" green="0.34901960784313724" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="SELECT TO DATE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jSL-aK-MDQ">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="SELECT TO DATE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jSL-aK-MDQ">
                                         <rect key="frame" x="8" y="31" width="268" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="fzw-jI-LCB"/>
@@ -10593,7 +10601,7 @@
                                         <color key="textColor" red="0.34901960784313724" green="0.34901960784313724" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="SELECT STATUS" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FhF-pV-Xlg">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="SELECT STATUS" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FhF-pV-Xlg">
                                         <rect key="frame" x="8" y="90" width="268" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="CNk-a4-bEK"/>
@@ -10756,11 +10764,12 @@
                         <outlet property="textppl" destination="S87-aO-wri" id="UOZ-oj-jGg"/>
                         <outlet property="textstatus" destination="FhF-pV-Xlg" id="GoX-I3-kPH"/>
                         <outlet property="texttaluka" destination="IPw-ZM-K1L" id="bcQ-sS-kea"/>
+                        <segue destination="Ydr-Su-iC0" kind="presentation" identifier="infoView" modalPresentationStyle="formSheet" id="PdZ-Xk-Hv7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yWW-3f-xZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2885" y="4840"/>
+            <point key="canvasLocation" x="2726" y="4846"/>
         </scene>
         <!--Detail-->
         <scene sceneID="ggS-39-eSD">
@@ -11295,6 +11304,7 @@
                         <outlet property="customerName" destination="18d-Ue-7gl" id="RAI-Pg-v8u"/>
                         <outlet property="customerNumber" destination="Fjq-vd-wNr" id="aWu-TA-73L"/>
                         <outlet property="tableview" destination="unz-kT-Zhk" id="fAD-Id-pts"/>
+                        <segue destination="Ydr-Su-iC0" kind="presentation" identifier="infoView" modalPresentationStyle="formSheet" id="Hne-ZQ-rD4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLJ-Ta-yLB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -11459,7 +11469,7 @@
                                         <color key="textColor" red="0.25490196078431371" green="0.26666666666666666" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="SELECT DATE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6tL-RI-sYm">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="SELECT DATE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6tL-RI-sYm">
                                         <rect key="frame" x="8" y="73" width="446" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="GBf-p1-UwN"/>
@@ -11506,7 +11516,7 @@
                                         <color key="textColor" red="0.25490196078431371" green="0.26666666666666666" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="SELECT TIME" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vew-nm-mR2">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="SELECT TIME" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vew-nm-mR2">
                                         <rect key="frame" x="8" y="71" width="448" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="en7-Ll-v5f"/>
@@ -11582,6 +11592,7 @@
                         <outlet property="txtActivityTime" destination="vew-nm-mR2" id="tuZ-nm-gCi"/>
                         <outlet property="txtActivityType" destination="urM-s9-4q1" id="CqB-y9-orC"/>
                         <outlet property="viewType" destination="Oer-P2-6IN" id="cm8-Vk-trg"/>
+                        <segue destination="Ydr-Su-iC0" kind="presentation" identifier="infoView" modalPresentationStyle="formSheet" id="GPc-r9-gDs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="emY-0H-vGQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -12639,7 +12650,7 @@
                                         <color key="textColor" red="0.074509803920000006" green="0.098039215690000001" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="SELECT ACTIVTY-TYPE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u02-lg-snR">
+                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="SELECT ACTIVTY-TYPE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u02-lg-snR">
                                         <rect key="frame" x="8" y="42" width="455" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="nnn-bU-V8O"/>
@@ -12654,7 +12665,7 @@
                                         <color key="textColor" red="0.074509803920000006" green="0.098039215690000001" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="SELECT DATE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bxk-43-sdn">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="SELECT DATE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bxk-43-sdn">
                                         <rect key="frame" x="8" y="130" width="455" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="uVN-eF-nEW"/>
@@ -12766,7 +12777,7 @@
                                         <color key="textColor" red="0.074509803920000006" green="0.098039215690000001" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="SELECT TIME" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3dE-hV-x3m">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="SELECT TIME" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3dE-hV-x3m">
                                         <rect key="frame" x="17" y="129" width="455" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="h59-Nw-xAb"/>
@@ -12869,6 +12880,7 @@
                         <outlet property="txtDescription" destination="XFg-jF-OkH" id="5mG-wc-7lx"/>
                         <outlet property="txtSelectDate" destination="bxk-43-sdn" id="KMC-Fb-7OB"/>
                         <outlet property="txtSelectTime" destination="3dE-hV-x3m" id="KVL-FA-XpY"/>
+                        <segue destination="Ydr-Su-iC0" kind="presentation" identifier="infoView" modalPresentationStyle="formSheet" id="8ck-PJ-ucq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2y4-AI-BOk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -13127,9 +13139,10 @@
         <image name="update_btn-1.png" width="177" height="71"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zAB-PB-GKD"/>
-        <segue reference="g7n-P8-BKq"/>
+        <segue reference="GM2-gn-DV1"/>
+        <segue reference="rbv-Mz-7nF"/>
         <segue reference="Pg2-Z2-nma"/>
+        <segue reference="zAB-PB-GKD"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
