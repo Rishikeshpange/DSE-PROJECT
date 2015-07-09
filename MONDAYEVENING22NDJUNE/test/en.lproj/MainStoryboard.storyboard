@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -44,7 +45,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Done" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBN-ic-OHR">
                                         <rect key="frame" x="217" y="243" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JTQ-hN-5hF" customClass="XYPieChart">
@@ -90,7 +91,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Open" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haH-XR-RTZ">
                                         <rect key="frame" x="121" y="243" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -110,14 +111,49 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7s-aa-yzx">
                                 <rect key="frame" x="28" y="142" width="475" height="264"/>
                                 <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8wG-dg-G1E">
+                                    <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8wG-dg-G1E">
                                         <rect key="frame" x="0.0" y="0.0" width="360" height="264"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="264" id="Ifg-I6-N6c"/>
+                                            <constraint firstAttribute="width" constant="360" id="ZhV-nF-Mi1"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Ifg-I6-N6c"/>
+                                                <exclude reference="ZhV-nF-Mi1"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="Ifg-I6-N6c"/>
+                                                <include reference="ZhV-nF-Mi1"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <segue destination="5XC-fH-Drx" kind="embed" id="jt8-a4-znA"/>
                                         </connections>
                                     </containerView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="8wG-dg-G1E" firstAttribute="leading" secondItem="I7s-aa-yzx" secondAttribute="leading" id="cvO-vK-1ia"/>
+                                    <constraint firstItem="8wG-dg-G1E" firstAttribute="top" secondItem="I7s-aa-yzx" secondAttribute="top" id="eQc-Oj-VbX"/>
+                                    <constraint firstAttribute="trailing" secondItem="8wG-dg-G1E" secondAttribute="trailing" constant="115" id="owc-o2-vjJ"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="cvO-vK-1ia"/>
+                                        <exclude reference="eQc-Oj-VbX"/>
+                                        <exclude reference="owc-o2-vjJ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="cvO-vK-1ia"/>
+                                        <include reference="eQc-Oj-VbX"/>
+                                        <exclude reference="owc-o2-vjJ"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="TOh-zd-K2V">
                                 <rect key="frame" x="28" y="479" width="961" height="255"/>
@@ -254,14 +290,18 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="fNK-qT-1an" firstAttribute="top" secondItem="e5m-tu-cwl" secondAttribute="bottom" constant="17" id="1Ha-Ob-fAo"/>
+                            <constraint firstItem="fNK-qT-1an" firstAttribute="top" secondItem="e5m-tu-cwl" secondAttribute="bottom" constant="17" id="1Ha-Ob-fAo">
+                                <variation key="widthClass=regular" constant="8"/>
+                            </constraint>
                             <constraint firstItem="ZSG-0e-uWB" firstAttribute="top" secondItem="TOh-zd-K2V" secondAttribute="bottom" constant="34" id="4SP-Z8-LDG">
                                 <variation key="widthClass=regular" constant="25"/>
                             </constraint>
                             <constraint firstItem="gBd-B1-b43" firstAttribute="width" secondItem="I7s-aa-yzx" secondAttribute="width" id="5TB-HX-Jbs"/>
                             <constraint firstItem="e5m-tu-cwl" firstAttribute="leading" secondItem="fNK-qT-1an" secondAttribute="leading" id="6hl-hE-A31"/>
                             <constraint firstItem="qVJ-Cs-zhC" firstAttribute="leading" secondItem="26" secondAttribute="leading" constant="28" id="6sY-qG-MDh"/>
-                            <constraint firstItem="I7s-aa-yzx" firstAttribute="top" secondItem="fNK-qT-1an" secondAttribute="bottom" constant="13" id="86O-yT-YsZ"/>
+                            <constraint firstItem="I7s-aa-yzx" firstAttribute="top" secondItem="fNK-qT-1an" secondAttribute="bottom" constant="13" id="86O-yT-YsZ">
+                                <variation key="widthClass=regular" constant="41"/>
+                            </constraint>
                             <constraint firstItem="qVJ-Cs-zhC" firstAttribute="top" secondItem="I7s-aa-yzx" secondAttribute="bottom" constant="8" id="Amb-HY-oEC">
                                 <variation key="widthClass=regular" constant="10"/>
                             </constraint>
@@ -271,7 +311,9 @@
                             <constraint firstItem="gBd-B1-b43" firstAttribute="leading" secondItem="I7s-aa-yzx" secondAttribute="trailing" constant="11" id="EHr-pl-I54"/>
                             <constraint firstItem="TOh-zd-K2V" firstAttribute="trailing" secondItem="gBd-B1-b43" secondAttribute="trailing" id="HmF-nn-fjN"/>
                             <constraint firstItem="I7s-aa-yzx" firstAttribute="leading" secondItem="fNK-qT-1an" secondAttribute="leading" id="I9q-4n-m39"/>
-                            <constraint firstItem="ZSG-0e-uWB" firstAttribute="top" secondItem="fNK-qT-1an" secondAttribute="bottom" constant="639" id="Jiq-UK-hbG"/>
+                            <constraint firstItem="ZSG-0e-uWB" firstAttribute="top" secondItem="fNK-qT-1an" secondAttribute="bottom" constant="639" id="Jiq-UK-hbG">
+                                <variation key="widthClass=regular" constant="667"/>
+                            </constraint>
                             <constraint firstItem="ZSG-0e-uWB" firstAttribute="top" secondItem="I7s-aa-yzx" secondAttribute="bottom" constant="362" id="VMy-Dl-UaT"/>
                             <constraint firstItem="gBd-B1-b43" firstAttribute="top" secondItem="I7s-aa-yzx" secondAttribute="top" id="hE7-6H-VQJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gBd-B1-b43" secondAttribute="trailing" constant="19" id="iqc-cf-Ylh"/>
@@ -971,7 +1013,9 @@
                                 <color key="backgroundColor" red="0.69803921570000005" green="0.71764705880000002" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="3O5-GX-1LY"/>
-                                    <constraint firstAttribute="width" constant="408" id="UE7-TG-3CD"/>
+                                    <constraint firstAttribute="width" constant="408" id="UE7-TG-3CD">
+                                        <variation key="widthClass=regular" constant="348"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -11242,7 +11286,7 @@
                                             <constraint firstAttribute="height" constant="29" id="m3s-ne-1n1"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -13139,10 +13183,10 @@
         <image name="update_btn-1.png" width="177" height="71"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GM2-gn-DV1"/>
         <segue reference="rbv-Mz-7nF"/>
         <segue reference="Pg2-Z2-nma"/>
         <segue reference="zAB-PB-GKD"/>
+        <segue reference="skE-zx-UYP"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
