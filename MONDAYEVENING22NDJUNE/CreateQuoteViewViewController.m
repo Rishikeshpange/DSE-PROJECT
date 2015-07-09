@@ -29,7 +29,7 @@
     appdelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     
     UIButton *state = [UIButton buttonWithType:UIButtonTypeCustom];
-    state.frame=CGRectMake(210, 2, 37, 37);
+    state.frame=CGRectMake(266, 2, 37, 37);
     [state setBackgroundImage:[UIImage imageNamed:@"dropdown1.png"] forState:UIControlStateNormal];
     
     [state addTarget:self action:@selector(getStates) forControlEvents:UIControlEventTouchUpInside];

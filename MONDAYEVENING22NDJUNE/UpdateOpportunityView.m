@@ -124,21 +124,21 @@
     }
        
     
-    UIButton *searchButton = [[UIButton alloc]initWithFrame:CGRectMake(214,3, 35, 35)];
+    UIButton *searchButton = [[UIButton alloc]initWithFrame:CGRectMake(266,3, 35, 35)];
     UIImage *btnImage = [UIImage imageNamed:@"dropdown1.png"];
     [searchButton setImage:btnImage forState:UIControlStateNormal];
     [searchButton addTarget:self action:@selector(LOBListDropDown) forControlEvents:UIControlEventTouchUpInside];
     //searchButton.backgroundColor=[UIColor blackColor];
     [self.LOBTextFiled addSubview:searchButton];
     
-    UIButton *PPLButton = [[UIButton alloc]initWithFrame:CGRectMake(214,3, 35, 39)];
+    UIButton *PPLButton = [[UIButton alloc]initWithFrame:CGRectMake(266,3, 35, 39)];
     //UIImage *btnImage = [UIImage imageNamed:@"2X_textbox_icon_3.png"];
     [PPLButton setImage:btnImage forState:UIControlStateNormal];
     [PPLButton addTarget:self action:@selector(SelectPPLDropDown) forControlEvents:UIControlEventTouchUpInside];
    // PPLButton.backgroundColor=[UIColor blackColor];
     [self.PPLTextField addSubview:PPLButton];
     
-    UIButton *PLButton = [[UIButton alloc]initWithFrame:CGRectMake(214,3, 35, 39)];
+    UIButton *PLButton = [[UIButton alloc]initWithFrame:CGRectMake(266,3, 35, 39)];
  //   UIImage *btnImage = [UIImage imageNamed:@"2X_textbox_icon_3.png"];
     [PLButton setImage:btnImage forState:UIControlStateNormal];
     [PLButton addTarget:self action:@selector(SelectPLDropDown) forControlEvents:UIControlEventTouchUpInside];
@@ -146,7 +146,7 @@
     [self.PLTextField addSubview:PLButton];
     
     
-    UIButton *ApplicationButton = [[UIButton alloc]initWithFrame:CGRectMake(214,3, 35, 39)];
+    UIButton *ApplicationButton = [[UIButton alloc]initWithFrame:CGRectMake(266,3, 35, 39)];
     //   UIImage *btnImage = [UIImage imageNamed:@"2X_textbox_icon_3.png"];
     [ApplicationButton setImage:btnImage forState:UIControlStateNormal];
     [ApplicationButton addTarget:self action:@selector(SelectApplicationDropDown) forControlEvents:UIControlEventTouchUpInside];

@@ -191,7 +191,7 @@ UILabel *mainLabel;
 //        cell.textLabel.highlightedTextColor = [UIColor colorWithRed:(0/255.0) green:(13/255.0) blue:(65/255.0) alpha:1];
          cell.textLabel.highlightedTextColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1];
         cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.bounds] ;
-        cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:(178/255.0) green:(183/255.0) blue:(63/255.0) alpha:1];
+        cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:(0/255.0) green:(0/255.0) blue:(63/255.0) alpha:1];
     // cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:(48/255.0) green:(57/255.0) blue:(58/255.0) alpha:1];
     }
     
