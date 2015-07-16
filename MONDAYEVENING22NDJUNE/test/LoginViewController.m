@@ -93,18 +93,21 @@
     
     NSLog(@"username & Password Save:%@ %@",usernamme,password);
     
-    self.username.text=usernamme;
-    self.password.text=password;
+    self.username.text = usernamme;
+    self.password.text = password;
     
+    //Abhishek temporary setting
+    //Remove Afterwords
+    
+    self.username.text = @"JJOSHI1001680"; //Abhishek
+    self.password.text = @"TATA2015"; //Abhishek
     
     if(!usernamme)
     {
-        
         self.Btnremeberme.image=[UIImage imageNamed:@"uncheck.png"];
-        
     }
     else{
-        
+    
         self.Btnremeberme.image=[UIImage imageNamed:@"checked.png"];
         // self.Btnremeberme.image=[UIImage imageNamed:@"checked.png"];
         imageflag=1;

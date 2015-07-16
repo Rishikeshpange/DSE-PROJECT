@@ -465,7 +465,6 @@ UIAlertView *alert;
     btn_CreateOpty.enabled = NO;//Abhishek
     btn_CreateOpty.backgroundColor = [UIColor colorWithRed:(101/255.0)green:(104/255.0) blue:(27/255.0) alpha:1];//Abhishek
     
-    
 }
 
 
@@ -549,6 +548,28 @@ UIAlertView *alert;
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string //Abhishek
 {
+    
+    
+    NSUInteger testLen = [self length:self.textnumber.text];
+    NSLog(@"\n\n testLen .... %d",testLen);
+    
+    NSLog(@"\n self.textnumber.text.. %@",self.textnumber.text);
+
+    if (testLen == 0) {
+        
+        if ([string isEqual:@"0"])
+        {
+            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"warning" message:@"Cell number should not start with Zero" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+            alertView.delegate = self;
+            alertView.tag = 150;
+            [alertView show];
+        }
+    }
+    else
+    {
+        NSLog(@"");
+    }
+    
     if (textField == self.textnumber) {
         NSLog(@"test");
         NSString * test123 = string;
@@ -562,7 +583,9 @@ UIAlertView *alert;
             [alertView show];
         }
         else {
-            NSLog(@"\n\n Allowed");
+            
+             NSLog(@"\n\n Allowed");
+             NSLog(@"\n self.textnumber.text.. %@",self.textnumber.text);
         }
     }
     return YES;
@@ -596,8 +619,8 @@ UIAlertView *alert;
         return NO;
     }
     else if (textField == self.textpostalcode){
-        [textField resignFirstResponder];
-        return NO;
+//        [textField resignFirstResponder];//Abhishek //
+//        return NO;//Abhishek //
     }
     else if (textField == self.LOB ){
         [textField resignFirstResponder];
@@ -663,7 +686,6 @@ UIAlertView *alert;
     [request addValue:msglength forHTTPHeaderField:@"Content-Length"];
     [[RequestDelegate alloc]initiateRequest:request name:@"GetLOB"];
 }
-
 
 
 
@@ -2238,6 +2260,10 @@ UIAlertView *alert;
     
     NSLog(@"\n\n.. createContact Connection "); //Abhishek
     
+    NSUInteger testLen = [self length:self.textnumber.text];
+    NSLog(@"\n\n testLen .... %d",testLen);
+    
+    
     if ([self.textfirst.text isEqualToString:@""]||
         [self.textlast.text isEqualToString:@""] ||
         [self.textnumber.text isEqualToString:@""] ||
@@ -2264,6 +2290,14 @@ UIAlertView *alert;
                                               otherButtonTitles:nil];
         [alert show];
         
+        return;
+    }
+   else if (testLen <10)
+   {
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Invalid Cell Number " delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alertView show];
+        
+        // self.textnumber.text = @"";
         return;
     }
     else{
@@ -2695,6 +2729,22 @@ UIAlertView *alert;
             // 2nd Other Button // Cancel Button
         }
     }
+    
+    
+    else if (alertView.tag == 150) //Abhishek Cell Number should not satrt with Zero
+    {
+        if (buttonIndex == 0)
+        {
+            // 1st Other Button // OK Button
+            NSLog(@"\n\n Testing 150 Alertview");
+            self.textnumber.text = @"";
+        }
+        else if (buttonIndex == 1)
+        {
+            // 2nd Other Button // Cancel Button
+        }
+    }
+    
 }
 
 
