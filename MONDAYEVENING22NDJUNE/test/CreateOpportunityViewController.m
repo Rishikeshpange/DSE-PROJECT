@@ -2948,6 +2948,7 @@ UIAlertView *alert;
     
     if ([response rangeOfString:@"SOAP:Fault"].location != NSNotFound )
     {
+        [self hideAlert];
         UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"Attention!" message:@"Something Went Wrong. Please try again later" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alertView show];
     }
