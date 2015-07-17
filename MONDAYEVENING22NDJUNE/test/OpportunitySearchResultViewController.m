@@ -845,9 +845,11 @@
         [self hideAlert];
         TBXML * tbxml = [TBXML newTBXMLWithXMLString:response error:&err];
         TBXMLElement *container = [TBXML childElementNamed:@"SearchSFAOpportunityResponse"  parentElement:[TBXML childElementNamed:@"SOAP:Body" parentElement:tbxml.rootXMLElement]];
+     
         if (!container) {
-            
+             [self hideAlert];
             UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"Attention!" message:@"No Records Found With Selected Values" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            alertView.tag=3;
             [alertView show];
 
             
@@ -1073,13 +1075,33 @@
         else
         {
             
-            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Attention!" message:@"Server Error!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"DSE" message:@"No Opportunities Found!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+              alert.tag=3;
             [alert show];
             // [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"SearchOptyViewController"] animated:NO];
         }
         }
     }
 }
+#pragma mark - UIAlertView Delegate
+-(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex //Abhishek // For contact and account
+{
+    
+    // Is this my Alert View?
+    if (alertView.tag == 3)
+    {
+        NSLog(@"\n\n Testing Alertview");
+        if (buttonIndex == 0)
+        {
+          [self.navigationController popViewControllerAnimated:YES];
+        }
+        else if (buttonIndex == 1)
+        {
+            // 2nd Other Button // Cancel Button
+        }
+    }
+  }
+
 
 -(void)showAlert
 {
