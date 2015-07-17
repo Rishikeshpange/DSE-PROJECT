@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 #import "UserDetails_Var.h"
 
-@interface ActivityUpdateViewController : UIViewController<UIActionSheetDelegate,UITextFieldDelegate>
+@interface ActivityUpdateViewController : UIViewController<UIActionSheetDelegate,UITextFieldDelegate,UITextViewDelegate>
 {
     
     UserDetails_Var *userDetailsVal_;

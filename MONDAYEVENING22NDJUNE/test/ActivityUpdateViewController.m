@@ -22,6 +22,7 @@
     NSString *stringFromDate;
     NSString *stringDate;
     NSString *dateTime;
+     UILabel *lbl;
 }
 @end
 
@@ -82,6 +83,19 @@
     
     self.btnUpdate.layer.cornerRadius=3;
     self.btnUpdate.layer.masksToBounds = YES;
+    
+    
+    lbl = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 0.0,txtDescription.frame.size.width - 10.0, 34.0)];
+    
+    
+    [lbl setText:@"Description"];
+    [lbl setFont:[UIFont systemFontOfSize:15]];
+    [lbl setBackgroundColor:[UIColor clearColor]];
+    [lbl setTextColor:[UIColor lightGrayColor]];
+    txtDescription.delegate = self;
+    
+    [txtDescription addSubview:lbl];
+
     
     
 //    self.txtActivityType.layer.borderColor = [UIColor colorWithRed:(49/255.0) green:(110/255.0) blue:(191/255.0) alpha:1].CGColor;
@@ -818,6 +832,41 @@
         NSLog(@"Activty Type: %@",activityType_PickerArr);
     }*/
 }
+-(void)textViewDidBeginEditing:(UITextView *)sender
+{
+    if ([sender isEqual:txtDescription])
+    {
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.1];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+        [UIView setAnimationBeginsFromCurrentState:YES];
+        
+        self.view.center = CGPointMake(self.view.center.x, 50.0);
+        [UIView commitAnimations];    }
+    
+    
+}
+
+
+
+
+- (void)textViewDidEndEditing:(UITextView *)theTextView
+{
+    if (![txtDescription hasText]) {
+        lbl.hidden = NO;
+    }
+}
+
+- (void) textViewDidChange:(UITextView *)textView
+{
+    if(![txtDescription hasText]) {
+        lbl.hidden = NO;
+    }
+    else{
+        lbl.hidden = YES;
+    }
+}
+
 
 
 - (IBAction)btnCancel:(id)sender {

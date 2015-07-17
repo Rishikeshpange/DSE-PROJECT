@@ -88,8 +88,8 @@
     lbl = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 0.0,descTxt.frame.size.width - 10.0, 34.0)];
     
     
-    [lbl setText:@"TYPE HERE"];
-    [lbl setFont:[UIFont systemFontOfSize:11]];
+    [lbl setText:@"Description"];
+    [lbl setFont:[UIFont systemFontOfSize:15]];
     [lbl setBackgroundColor:[UIColor clearColor]];
     [lbl setTextColor:[UIColor lightGrayColor]];
     descTxt.delegate = self;
